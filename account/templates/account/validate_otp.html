@@ -1,0 +1,119 @@
+{% extends 'account/dashboard_base.html' %}
+{% load static %}
+
+
+{% block content %}
+	
+      <div class="error-page">
+
+        <div class="error-content">
+         	<div class="container" style="text-align:center;">
+         	
+        		<h2 class="headline "> <i class="fa fa-mobile text-dark"></i></h2>
+        		
+			  <h3 class="margin-top-0">OTP VERIFICATION</h3>
+
+			  <h5>
+				Enter the one time password(OTP) sent to your registered email address to complete your account registration.
+			  </h5>
+        
+        <div class="row justify-content-center">
+         
+          <style>
+
+            .digit-group {
+              input  {
+                width: 30px;
+                height: 50px;
+                
+                border: none;
+                line-height: 50px;
+                text-align: center;
+                font-size: 24px;
+                font-family: 'Raleway', sans-serif;
+                font-weight: 200;
+                color: white;
+                margin: 0 2px;
+              }
+            
+              .splitter {
+                padding: 0 5px;
+                color: black;
+                font-size: 24px;
+              }
+            }
+            
+            .small{
+              width: 30px;
+                height: 50px;
+                
+                border: 1px solid black;
+                line-height: 50px;
+                text-align: center;
+                font-size: 24px;
+                font-family: 'Raleway', sans-serif;
+                font-weight: 200;
+                color: black;
+                margin: 0 2px;
+                
+            }
+            .prompt {
+              margin-bottom: 20px;
+              font-size: 20px;
+              color: white;
+            }
+          </style>
+         <br><br><br><br><br>
+          <div class="row" style="display: block;">
+        <form action="" method="POST" class="digit-group form-element mr-4" data-group-name="digits" data-autosubmit="false" autocomplete="off">
+          {% csrf_token %}
+          
+          <div class="form-group has-feedback ">
+          <input type="text" class="small" id="digit-1" name="digit-1" data-next="digit-2" />
+          <input type="text" class="small" id="digit-2" name="digit-2" data-next="digit-3" data-previous="digit-1" />
+          <input type="text"  class="small"id="digit-3" name="digit-3" data-next="digit-4" data-previous="digit-2" />
+          <span class="splitter">&ndash;</span>
+          <input type="text" class="small" id="digit-4" name="digit-4" data-next="digit-5" data-previous="digit-3" />
+          <input type="text" class="small" id="digit-5" name="digit-5" data-next="digit-6" data-previous="digit-4" />
+          <input type="text"  class="small" id="digit-6" name="digit-6" data-previous="digit-5" />
+
+          </div>
+        
+      
+
+      
+          
+      
+         
+        
+    
+         <br>
+          <div class="row ml-4" style="display: block;">
+            
+            <!-- /.col -->
+            <div class=" text-center ml-4">
+              <a href="{% url 'send_otp' %}" type="submit" class="btn btn-danger margin-top-10 mr-3">Resend code</a>
+              <a href="{% url 'change_email_address' %}" type="submit" class="btn btn-primary margin-top-10 mr-3">Change email address</a>
+              <button type="submit" class="btn btn-success margin-top-10 ml-3">Verify</button>
+            </div>
+            <!-- /.col -->
+         
+
+            <!-- /.col -->
+          </div>
+        </form>
+        </div>
+    
+</div>
+
+          </div>
+        </div>
+        <!-- /.error-content -->
+        
+ 
+      </div>
+      <!-- /.error-page -->
+     
+  
+
+{% endblock %}

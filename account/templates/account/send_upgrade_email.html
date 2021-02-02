@@ -1,0 +1,552 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="FX Crypto Profit Ltd Trading and Investments">
+    <meta name="author" content="FX Crypto Profit Ltd">
+    
+    <link rel="icon" href="{% static 'fxcryptoprofitltd/wp-content/themes/vfx_new/images/favicon1.ico' %}}">
+
+    <title>FX Crypto Profit Ltd - Dashboard</title>
+    
+	<!-- Bootstrap 4.0-->
+	<link rel="stylesheet" href="{% static 'account/assets/vendor_components/bootstrap/dist/css/bootstrap.css' %}">
+    
+	
+	
+	<!-- Bootstrap-extend -->
+	<link rel="stylesheet" href="{% static 'account/css/bootstrap-extend.css' %}">
+	
+	<!-- theme style -->
+	<link rel="stylesheet" href="{% static 'account/css/master_style.css' %}">
+  
+  
+  <!--fonts links-->
+  <link rel="stylesheet" href="{% static 'account/assets/vendor_components/font-awesome/css/font-awesome.css' %}">
+  <link rel="stylesheet" href="{% static 'account/assets/vendor_components/Ionicons/css/ionicons.css' %}">
+  <link rel="stylesheet" href="{% static 'account/assets/vendor_components/themify-icons/themify-icons.css' %}">
+  <link rel="stylesheet" href="{% static 'account/assets/vendor_components/linea-icons/linea.css' %}">
+  <link rel="stylesheet" href="{% static 'account/assets/vendor_components/glyphicons/glyphicon.css' %}">
+  
+  <link rel="stylesheet" href="{% static 'account/assets/vendor_components/material-design-iconic-font/css/materialdesignicons.css' %}">
+  <link rel="stylesheet" href="{% static 'account/assets/vendor_components/simple-line-icons-master/css/simple-line-icons.css' %}">
+  
+
+
+	<!-- Crypto_Admin skins -->
+	<link rel="stylesheet" href="{% static 'account/css/skins/_all-skins.css' %}">
+	
+
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+  {{ form.media.css }}
+     
+  </head>
+
+<body class="hold-transition skin-yellow sidebar-mini">
+
+  <div class="messages" style="text-align: center;">
+    {% if messages %}
+    {% for message in messages %}
+    <p class="alert alert-{{ message.tags }}">
+      {{message}}
+    </p>
+    {% endfor %}
+    {% endif %}
+    </div>
+
+
+
+    <!--crypto currency live price start here-->
+<div style="height:62px; background-color: #FFFFFF; overflow:hidden; box-sizing: border-box; border: 1px solid #111; border-radius: 4px; text-align: right; line-height:14px; block-size:62px; font-size: 12px; font-feature-settings: normal; text-size-adjust: 100%; box-shadow: inset 0 -20px 0 0 #111;padding:1px;padding: 0px; margin: 0px; width: 100%;">
+	<div style="height:40px; padding:0px; margin:0px; width: 100%;"><iframe src="https://widget.coinlib.io/widget?type=horizontal_v2&theme=light&pref_coin_id=1505&invert_hover=" width="100%" height="36px" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0" border="0" style="border:0;margin:0;padding:0;"></iframe></div></div>
+	
+		<!--crypto currency live price ends here-->
+
+
+<div class="wrapper">
+  <header class="main-header">
+    <!-- Logo -->
+    <a href="{% url 'user_dashboard' %}" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+	  <b class="logo-mini">
+      <span class="light-logo"><img src="{% static 'fxcryptoprofitltd/wp-content/themes/vfx_new/images/board-logo1.png' %}" alt="logo"></span>
+		  <span class="dark-logo"><img src="{% static 'fxcryptoprofitltd/wp-content/themes/vfx_new/images/board-logo1.png' %}" alt="logo"></span>
+	  </b>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg">
+		  <h3 class="light-logo">FX Crypto Profit Ltd</h3>
+	  	  <h3 class="dark-logo">FX Crypto Profit Ltd</h3>
+	  </span>
+    </a>
+
+
+    <style>
+
+      .nav-glow {
+          
+          
+        border: 5px;
+        
+        cursor: pointer;
+        
+        
+       
+        -webkit-animation: glowing 1500ms infinite;
+        -moz-animation: glowing 1500ms infinite;
+        -o-animation: glowing 1500ms infinite;
+        animation: glowing 1500ms infinite;
+      }
+      @-webkit-keyframes glowing {
+        0% { background-color:#ffc107 ; -webkit-box-shadow: 0 0 3px #B20000; }
+        50% { background-color: #ffc107; -webkit-box-shadow: 0 0 40px #FF0000; }
+        100% { background-color: #ffc107; -webkit-box-shadow: 0 0 3px #B20000; }
+      }
+      
+      @-moz-keyframes glowing {
+        0% { background-color: #ffc107; -moz-box-shadow: 0 0 3px #B20000; }
+        50% { background-color:#ffc107; -moz-box-shadow: 0 0 40px #FF0000; }
+        100% { background-color: #ffc107; -moz-box-shadow: 0 0 3px #B20000; }
+      }
+      
+      @-o-keyframes glowing {
+        0% { background-color: #ffc107; box-shadow: 0 0 3px #B20000; }
+        50% { background-color:#ffc107; box-shadow: 0 0 40px #FF0000; }
+        100% { background-color: #ffc107; box-shadow: 0 0 3px #B20000; }
+      }
+      
+      @keyframes glowing {
+        0% { background-color: #ffc107; box-shadow: 0 0 3px #B20000; }
+        50% { background-color: #ffc107; box-shadow: 0 0 40px #FF0000; }
+        100% { background-color: #ffc107; box-shadow: 0 0 3px #B20000; }
+      }
+
+
+      .price-glow {
+          
+          
+          
+          
+        cursor: pointer;
+        
+        
+       
+        -webkit-animation: glowing 1500ms infinite;
+        -moz-animation: glowing 1500ms infinite;
+        -o-animation: glowing 1500ms infinite;
+        animation: glowing 1500ms infinite;
+      }
+      @-webkit-keyframes glowing {
+        0% { background-color:; -webkit-box-shadow: 0 0 1px #B20000; }
+        50% { background-color:; -webkit-box-shadow: 0 0 10px #FF0000; }
+        100% { background-color: ; -webkit-box-shadow: 0 0 1px #B20000; }
+      }
+      
+      @-moz-keyframes glowing {
+        0% { background-color: ; -moz-box-shadow: 0 0 1px #B20000; }
+        50% { background-color:; -moz-box-shadow: 0 0 10px #FF0000; }
+        100% { background-color: ; -moz-box-shadow: 0 0 1px #B20000; }
+      }
+      
+      @-o-keyframes glowing {
+        0% { background-color: ; box-shadow: 0 0 1px #B20000; }
+        50% { background-color:; box-shadow: 0 0 10px #FF0000; }
+        100% { background-color: ; box-shadow: 0 0 1px #B20000; }
+      }
+      
+      @keyframes glowing {
+        0% { background-color: ; box-shadow: 0 0 1px #B20000; }
+        50% { background-color: ; box-shadow: 0 0 10px #FF0000; }
+        100% { background-color: ; box-shadow: 0 0 1px #B20000; }
+      }
+      
+      
+      
+      .price-glow {
+          
+          
+          
+          
+        cursor: pointer;
+        
+        
+       
+        -webkit-animation: glowing 1500ms infinite;
+        -moz-animation: glowing 1500ms infinite;
+        -o-animation: glowing 1500ms infinite;
+        animation: glowing 1500ms infinite;
+      }
+      @-webkit-keyframes glowing {
+        0% { background-color:; -webkit-box-shadow: 0 0 1px #B20000; }
+        50% { background-color:; -webkit-box-shadow: 0 0 10px #FF0000; }
+        100% { background-color: ; -webkit-box-shadow: 0 0 1px #B20000; }
+      }
+      
+      @-moz-keyframes glowing {
+        0% { background-color: ; -moz-box-shadow: 0 0 1px #B20000; }
+        50% { background-color:; -moz-box-shadow: 0 0 10px #FF0000; }
+        100% { background-color: ; -moz-box-shadow: 0 0 1px #B20000; }
+      }
+      
+      @-o-keyframes glowing {
+        0% { background-color: ; box-shadow: 0 0 1px #B20000; }
+        50% { background-color:; box-shadow: 0 0 10px #FF0000; }
+        100% { background-color: ; box-shadow: 0 0 1px #B20000; }
+      }
+      
+      @keyframes glowing {
+        0% { background-color: ; box-shadow: 0 0 1px #B20000; }
+        50% { background-color: ; box-shadow: 0 0 10px #FF0000; }
+        100% { background-color: ; box-shadow: 0 0 1px #B20000; }
+      }
+    </style>
+    
+    <!-- Header Navbar -->
+    <nav class="navbar navbar-static-top nav-glow">
+      <!-- Sidebar toggle button-->
+      
+      {% if not request.user.place_on_hold %}
+      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button" >
+        {% endif %}
+        <span class="sr-only">Toggle navigation</span>
+        
+      </a>
+      {% if request.user.show_message %}
+      <h6 style=" " class="text-dark text-bold mr-1 ml-1 ">KINDLY FIX THE PROBLEM AND ENSURE YOUR SUCCESS WITH US</h6>
+      <a href="#" class="" >
+        
+      </a><a href="#" class="" >
+        
+      </a>
+
+      {% endif %}
+
+      {% if request.user.enable_error_sound %}
+
+      <audio autoplay playsinline loop>
+        
+        <source src="{% static 'account/audio/error.mp3' %}" type="audio/mpeg">
+      Your browser does not support the audio element.
+      </audio>
+
+      {% endif %}
+      <style>
+
+        @media only screen and (max-width: 768px) {
+          /* For mobile phones: */
+          .new-text {
+           display: block;
+          }
+          
+          
+          }
+
+          @media only screen and (max-width: 202px) {
+            /* For mobile phones: */
+            .new-text {
+             display: block;
+            }
+            
+            
+            }
+          
+      </style>
+     
+    </nav>
+   
+  </header>
+  
+ <!-- Left side column. contains the logo and sidebar -->
+ {% if not request.user.place_on_hold %}
+ <aside class="main-sidebar">
+   <!-- sidebar -->
+   <section class="sidebar">
+     <!-- Sidebar user panel -->
+     <div class="user-panel">
+    <div class="ulogo">
+      <a href="{% url 'user_dashboard' %}">
+       <!-- logo for regular state and mobile devices -->
+       <span><b>FX Crypto Profit Ltd</b></span>
+     </a>
+   </div>
+       <div class="image">
+         <img src="{% static 'account/images/user2-160x160.jpg' %}" class="rounded-circle" alt="User Image">
+       </div>
+       <div class="info">
+         <p>{{request.user.email}}</p>
+     </div>
+     </div>
+     <!-- sidebar menu -->
+     <ul class="sidebar-menu" data-widget="tree">
+   
+      
+       <li class="active">
+         <a href="{%  url 'user_dashboard' %}">
+           <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+           <span class="pull-right-container">
+             <i class="fa fa-angle-right pull-right"></i>
+           </span>
+         </a>
+       </li>
+       
+      
+       
+       
+       
+       <li class="">
+         {% if request.user.withdraw_not_eligable %}
+        
+         <a href="{% url 'withdraw_not_eligable' %}">
+           <i class="icon-wallet"></i>
+           <span>Withdraw</span>
+           <span class="pull-right-container">
+             <i class="fa fa-angle-right pull-right"></i>
+           </span>
+         </a>
+         {% else %}
+         <a href="{% url 'withdraw' %}">
+           <i class="icon-wallet"></i>
+           <span>Withdraw</span>
+           <span class="pull-right-container">
+             <i class="fa fa-angle-right pull-right"></i>
+           </span>
+         </a>
+         {% endif %}
+       </li>
+
+       
+       <li class="">
+         <a href="{% url 'deposit' %}">
+           <i class="icon-wallet"></i>
+           <span>Deposit</span>
+           <span class="pull-right-container">
+             <i class="fa fa-angle-right pull-right"></i>
+           </span>
+         </a>
+         
+       </li>
+
+       <li class="">
+         <a href="{% url 'personal_info' %}">
+           <i class="fa fa-user-circle-o "></i>
+           <span>Personal Info</span>
+           <span class="pull-right-container">
+             <i class="fa fa-angle-right pull-right"></i>
+           </span>
+         </a>
+         
+       </li>
+       
+      
+       
+       <li class="">
+         <a href="{% url 'transaction_history'%}">
+           <i class="icon-chart"></i>
+           <span>Transaction History</span>
+           <span class="pull-right-container">
+             
+             <i class="fa fa-angle-right pull-right"></i>
+           </span>
+         </a>
+         
+       </li>
+       
+   
+       
+       <li class="">
+         <a href="{% url 'account_types' %}">
+           <i class="fa fa-th"></i>
+           <span>Account Types</span>
+           <span class="pull-right-container">
+             
+             <i class="fa fa-angle-right pull-right"></i>
+           </span>
+         </a>
+         
+       </li>
+
+       <li class="">
+         <a href="{% url 'password_change' %}">
+           <i class="fa fa-key"></i>
+           <span>Change Password</span>
+           <span class="pull-right-container">
+             
+             <i class="fa fa-angle-right pull-right"></i>
+           </span>
+         </a>
+         
+       </li>
+
+        <li class="">
+         <a href="{% url 'logout' %}">
+           <i class="ion ion-power"></i>
+           <span>Logout</span>
+           
+         </a>
+         
+       </li>
+ 
+              
+       
+     </ul>
+   </section>
+ </aside>
+{% endif %}
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+   
+	
+      <div class="error-page">
+
+        <div class="error-content">
+         	<div class="container mt-5" style="text-align:center;">
+         	
+        		<h2 class="headline "> <i class=" mt-5 fa fa-exclamation-triangle text-danger"></i></h2>
+        		
+			  <h3 class="margin-top-0">ACCOUNT PLACED ON HOLD</h3>
+
+			  <p class="text-bold">
+				{{request.user.user_message}}
+              </p>
+        
+        <div class="row justify-content-center">
+       
+         
+          <div class="row mb-5">
+            
+            <!-- /.col -->
+            <div class=" text-center ml-4 mb-5 mt-3">
+              <a href="{% url 'user_account_upgrade' %}" type="submit" class=" price-glow btn btn-primary margin-top-10 mr-3">{{request.user.user_button_text}}</a>
+               
+              <a href="{% url 'user_dashboard' %}" type="submit" class="price-glow btn btn-success margin-top-10 mr-3">Return to dashboard</a>
+                          </div>
+            <!-- /.col -->
+            
+            <!-- /.col -->
+          </div>
+       
+    
+</div>
+
+          </div>
+        </div>
+        <!-- /.error-content -->
+        
+ 
+      </div>
+      <!-- /.error-page -->
+     
+  
+     
+
+    </div>
+    <!-- /.content-wrapper -->
+    
+    <footer class="main-footer">
+     
+      &copy; {% now 'Y' %} <a href="">FX Crypto Profit Ltd</a>. All Rights Reserved.
+    </footer>
+  
+    
+    
+    
+  </div>
+  <!-- ./wrapper -->
+      
+     
+      
+    <!-- jQuery 3 -->
+    <script src="{% static 'account/assets/vendor_components/jquery/dist/jquery.js' %}"></script>
+    {{ form.media.js }}
+    <!-- popper -->
+    <script src="{% static 'account/assets/vendor_components/popper/dist/popper.min.js' %}"></script>
+    
+    <!-- Bootstrap 4.0-->
+    <script src="{% static 'account/assets/vendor_components/bootstrap/dist/js/bootstrap.js' %}"></script>
+    
+    <!-- Slimscroll -->
+    <script src="{% static 'account/assets/vendor_components/jquery-slimscroll/jquery.slimscroll.js' %}"></script>
+    
+    <!-- FastClick -->
+    <script src="{% static 'account/assets/vendor_components/fastclick/lib/fastclick.js' %}"></script>
+    
+    
+    
+    <!-- webticker -->
+    <script src="{% static 'account/assets/vendor_components/Web-Ticker-master/jquery.webticker.min.js' %}"></script>
+    
+    
+    <!-- This is data table -->
+      <script src="{% static 'account/assets/vendor_plugins/DataTables-1.10.15/media/js/jquery.dataTables.min.js' %}"></script>
+    
+    <!-- Crypto_Admin App -->
+    <script src="{% static 'account/js/template.js' %}"></script>
+    
+    <!-- Crypto_Admin dashboard demo (This is only for demo purposes) -->
+    <script src="{% static 'account/js/pages/dashboard.js' %}"></script>
+    
+  
+    <!-- jQuery Knob -->
+    <script src="{% static 'account/assets/vendor_components/jquery-knob/js/jquery.knob.js' %}"></script>
+    
+  
+    <!-- Crypto_Admin for demo purposes -->
+    <script src="{% static 'account/js/demo.js' %}"></script>
+  
+    
+    <script type="text/javascript">
+      $(function(){
+        setTimeout(function(){
+          $('.alert').slideUp(1200);
+        }, 2500);
+      });
+    </script>
+  
+  
+    <script type="text/javascript">
+           
+      $('.digit-group').find('input').each(function() {
+        $(this).attr('maxlength', 1);
+        $(this).on('keyup', function(e) {
+          var parent = $($(this).parent());
+          
+          if(e.keyCode === 8 || e.keyCode === 37) {
+            var prev = parent.find('input#' + $(this).data('previous'));
+            
+            if(prev.length) {
+              $(prev).select();
+            }
+          } else if((e.keyCode >= 48 && e.keyCode <= 57) || (e.keyCode >= 65 && e.keyCode <= 90) || (e.keyCode >= 96 && e.keyCode <= 105) || e.keyCode === 39) {
+            var next = parent.find('input#' + $(this).data('next'));
+            
+            if(next.length) {
+              $(next).select();
+            } else {
+              if(parent.data('autosubmit')) {
+                parent.submit();
+              }
+            }
+          }
+        });
+      });
+  
+  </script>
+  </body>
+  <!--Shart boot Tidio-->
+  
+  
+  
+  </html>
+  

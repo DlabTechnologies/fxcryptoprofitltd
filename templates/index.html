@@ -1,0 +1,1435 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% load humanize %}
+
+
+{% block content %}
+<body class="home page-template page-template-template_home page-template-template_home-php page page-id-5">
+
+
+    <div class="wrapper">
+        <div class="header no_page_banner">
+            <div class="header_top_bar">
+                <div class="inner">
+
+                    {% for info in info %}
+                    <span class="icon_phone">{{info.phone}}</span>
+
+                    {% endfor %}
+                    <a class="header_webtrader_link" href="{% url 'webtrader_page' %}" rel="nofollow">WebTrader</a>
+                    
+                    <div class="reg_link">
+                        {% if request.user.is_admin %}
+                    <a class="btn_live" href="https://www.fxcryptoprofitltd.com/dlabtech_admin" rel="nofollow">Admin Panel</a>
+                    <a class="btn_demo" href="{% url 'logout' %}" rel="nofollow">Logout</a>
+                    
+					
+                    {% else %}
+                        <a class="btn_live" href="{% url 'register' %}" >Live Account</a>
+                        <a class="btn_demo" href="{% url 'login' %}"  rel="nofollow">Client Login</a>
+                        {% endif %}
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="header_menu_wrapper">
+                <div class="inner">
+                    <a class="header_logo" href="{% url 'home_page' %}"><img src="{% static 'fxcryptoprofitltd/wp-content/themes/vfx_new/images/logo.png' %}" alt="" /></a>
+                    <div class="header_menu_container">
+                        <ul class="header_menu_tabs">
+                            <li>
+                                <a href="javascript:;" class="header_menu_first">TRADING</a>
+                                <div class="header_menu_tab_content" id="header_menu_contnet1">
+                                    <div class="header_menu_links">
+                                        <h2>Trading</h2>
+                                        <p>With over 300+ instruments such as FX pairs, Indices, Commodities and Share CFDs, trade your way with FX Crypto Profit Ltd.</p>
+                                        <a href="{% url 'register' %}" class="live_link">open LIVE Account</a>
+                                        
+                                    </div>
+                                    <div class="sub_menu_box">
+                                        <ul class="sub_menu">
+                                            <li>
+                                                <a href="javescript:void(0);">Trading Accounts</a>
+                                                <ul>
+                                                    <li><a class="menu_popular_icon" href="{% url 'raw_ecn_page' %}">RAW ECN</a></li>
+                                                    <li><a href="{% url 'standard_stp_page' %}">Standard STP</a></li>
+                                                    <li><a href="{% url 'pro_ecn_page' %}">PRO ECN</a></li>
+                                                    
+                                                    
+                                                    
+                                                </ul>
+                                            </li>
+                                           
+    
+                                        </ul>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="header_menu_first">platforms</a>
+                                <div class="header_menu_tab_content" id="header_menu_contnet2">
+                                    <div class="header_menu_links">
+                                        <h2>Platforms</h2>
+                                        <p>Access the industry leading MT4 and MT5 platforms on your PC, Mac, iOS and Android devices.</p>
+                                        <a href="{% url 'register' %}" class="live_link">open LIVE Account</a>
+                                      
+                                    </div>
+                                    <div class="sub_menu_box">
+                                        <ul class="sub_menu">
+                                            <li>
+                                                <a href="javescript:void(0);">Trading Platforms</a>
+                                                <ul>
+                                                    
+                                                    <li><a href="{% url 'mt4_page' %}">Metatrader 4</a></li>
+                                                    <li><a class="" href="{% url 'mt5_page' %}">Metatrader 5</a></li>
+                                                     <li><a href="{% url 'webtrader_page' %}">Webtrader</a></li>
+                                                   
+                                                    
+                                                    
+                                                </ul>
+                                            </li>
+                                           
+    
+                                        </ul>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </li>
+                            
+    
+                            <li>
+                                <a href="javascript:;" class="header_menu_first">about us</a>
+                                <div class="header_menu_tab_content" id="header_menu_contnet4">
+                                    <div class="header_menu_links">
+                                        <h2>About Us</h2>
+                                        <p>FX Crypto Profit Ltd is a leading regulated Forex broker offering traders around the world access to global markets.</p>
+                                        <a href="{% url 'register' %}" class="live_link">open LIVE Account</a>
+                                        
+                                    </div>
+                                    <div class="sub_menu_box">
+                                        <ul class="sub_menu">
+                                            <li>
+                                                <a href="javescript:void(0);">About Us</a>
+                                                <ul>
+                                                    <li><a href="{% url 'who_we_are_page' %}">Who is FXCP？</a></li>
+                                                    
+                                                    <li><a href="{% url 'contact_page' %}">Contact Us</a></li>
+                                                </ul>
+                                            </li>
+                                           
+    
+                                        </ul>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </li>
+                           
+    
+                        </ul>
+                        <div class="clear"></div>
+                    </div>
+                    <span class="mobile_menu_hamburger"><i></i><i></i><i></i></span>
+                   
+                    <div class="clear"></div>
+                </div>
+                <!--Mobile 菜单 开始-->
+                <div class="mobile_menu">
+                    <div class="mobile_menu_content">
+                        <div class="home_icon_link"><a href="{% url 'home_page' %}"><span><i class="fa fa-home" aria-hidden="true"></i>Home</span></a></div>
+                        <ul class="header_menu">
+                            <li class="menu-item-has-children">
+                                <a href="javascript:;" class="header_menu_first">TRADING</a>
+                                <ul class="sub_menu">
+                                    <li class="menu-item-has-children">
+                                        <a href="javescript:void(0);">Trading Accounts</a>
+                                        <ul>
+                                            <li><a class="menu_popular_icon" href="{% url 'raw_ecn_page' %}">RAW ECN</a></li>
+                                            <li><a href="{% url 'standard_stp_page' %}">Standard STP</a></li>
+                                            <li><a href="{% url 'pro_ecn_page' %}">PRO ECN</a></li>
+                                            
+                                            
+                                           
+                                        </ul>
+                                    </li>
+                                   
+    
+                                   
+    
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="javascript:;" class="header_menu_first">platforms</a>
+                                <ul class="sub_menu">
+                                    <li class="menu-item-has-children">
+                                        <a href="javescript:void(0);">Trading Platforms</a>
+                                        <ul>
+                                           
+                                            <li><a href="{% url 'mt4_page' %}">Metatrader 4</a></li>
+                                            <li><a class="menu_popular_icon" href="{% url 'mt5_page' %}">Metatrader 5</a></li>
+                                            
+                                            <li><a href="{% url 'webtrader_page' %}">Webtrader</a></li>
+                                            
+                                            
+                                          
+                                        </ul>
+                                    </li>
+                                    
+    
+                                </ul>
+                            </li>
+                            
+                            <li class="menu-item-has-children">
+                                <a href="javascript:;" class="header_menu_first">about us</a>
+                                <ul class="sub_menu">
+                                    <li class="menu-item-has-children">
+                                        <a href="javescript:void(0);">About Us</a>
+                                        <ul>
+                                            <li><a href="{% url 'who_we_are_page' %}">Who is FXCP?</a></li>
+                                          
+                                            <li><a href="{% url 'contact_page' %}">Contact Us</a></li>
+                                        </ul>
+                                    </li>
+    
+                                    
+    
+                                </ul>
+                            </li>
+                            
+    
+                        </ul>
+                    </div>
+                </div>
+                <!--Mobile 菜单 结束-->
+            </div>
+        </div>
+        <div id="fixed_header">
+            <div class="inner">
+                <div class="menu_left"><a href="{% url 'contact_page' %}">CONTACT US</a></div>
+                <a class="fixed_header_logo" href="{% url 'home_page' %}"><img src="{% static 'fxcryptoprofitltd/wp-content/themes/vfx_new/images/logo.png' %}" alt="" /></a>
+                <div class="reg_link">
+                    <a class="btn_live" href="{% url 'register' %}" >Live Account</a>
+                    
+                    <a class="btn_login" target="_blank" href="{% url 'login' %}" rel="nofollow">Client Login</a>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+
+
+
+    <script type="text/javascript">
+    jQuery(document).ready(function($){
+        $('ul.home_slider_list').bxSlider({
+            auto:true
+        });
+    
+        /*判断高度 js*/
+        function render(){
+            var home_slider_banner_top= parseInt($(".header_menu_wrapper").height());
+            $(".home_slider_content ul li .home_slider_box .inner").css("padding-top",home_slider_banner_top + 60);
+        }
+        render();
+        $(window).resize(function(){
+            render();
+        });
+        /*判断高度 js 结束*/
+    });
+    </script>
+    <style>
+    .home_slider_wrapper{ position:relative;}
+    .home_slider_content .bx-pager{ width:100%; padding:0px; margin:0px; position:absolute; left:0px; top:calc(100% - 112px); text-align:center;}
+    .home_slider_content .bx-pager .bx-pager-item{ padding:4px; display:inline-block;}
+    .home_slider_content .bx-pager .bx-pager-item a{ display:inline-block; width:48px; height:4px; text-indent:-9999em; background:rgba(29,40,54,0.3);}
+    .home_slider_content .bx-pager .bx-pager-item a.active{ background:#FFF;}
+    .home_slider_content .bx-controls-direction{ display:none;}
+    .home_slider_content{ position:relative;}
+    .home_slider_content ul{ padding:0px; margin:0px;}
+    .home_slider_content ul li{ padding:0px; margin:0px;}
+    .home_slider_content ul li .home_slider_box{ height:770px;}
+    .home_slider_content ul li .home_slider_box .inner{ height:100%;}
+    .home_slider_content ul li .home_slider_box h2{ padding:0px; margin:0px 0px 100px; line-height:1.3; color:#FFF; font-weight:bold; font-size:38px; text-align:center;}
+    .home_slider_content ul li .home_slider_box h2:after{ content:""; display:none; margin:27px auto 0px; width:90px; height:4px; background:#fff;}
+    .home_slider_content ul li .home_slider_box .text_box{ width:880px; margin:0px auto; max-width:100%; text-align:center;}
+    .home_slider_content ul li .home_slider_box .red_arrow_button{ width:207px; text-align:center;}
+    @media (max-width:990px){
+        .home_slider_content ul li .home_slider_box{ height:600px;}
+        .home_slider_content ul li .home_slider_box h2{ font-size:32px; margin-bottom:50px;}
+        .home_slider_content .bx-pager{ top:calc(100% - 52px);}
+    }
+    @media (max-width:768px){
+        .home_slider_content ul li .home_slider_box .inner{ padding-bottom:52px;}
+        .home_slider_content ul li .home_slider_box{ height:480px;}
+        .home_slider_content ul li .home_slider_box h2{ font-size:24px; margin-bottom:20px;}
+        .home_slider_content ul li .home_slider_box .red_arrow_button{ padding-top:8px; padding-bottom:8px; padding-right:30px; font-size:14px; width:140px;}
+        .red_arrow_button:after{ top:8px; right:15px;}
+    }
+    </style>
+    <div class="home_slider_wrapper">
+        <div class="home_slider_content">
+            <ul class="home_slider_list">
+                <!-- <li>
+                    <div class="home_slider_box" style="background-image:url({% static 'fxcryptoprofitltd/wp-content/themes/vfx_new/images/home_banner_sharecfds_img1_1.jpg); background-position:center top; background-repeat:no-repeat; background-size:cover;">
+                        <div class="inner">
+                            <div class="tableBox">
+                                <div class="table_cellBox">
+                                    <div class="text_box">
+                                        <h2>Trade Global Share CFDs with ZERO Commissions</h2>
+                                        <a class="red_arrow_button" href="/forex-trading/forex-trading-account/">start now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li> -->
+    
+                <li>
+                    <div class="home_slider_box" style="background-image:url({% static 'fxcryptoprofitltd/wp-content/themes/vfx_new/images/home_banner_mt4_0121.jpg' %}); background-position:center top; background-repeat:no-repeat; background-size:cover;">
+                        <div class="inner">
+                            <div class="tableBox">
+                                <div class="table_cellBox">
+                                    <div class="text_box">
+                                        <h2>Access 300+ FX, Commodities, Indices & Share CFDs from MT4/MT5</h2>
+                                        <a class="red_arrow_button" href="{% url 'register' %}">start now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="home_slider_box" style="background-image:url({% static 'fxcryptoprofitltd/wp-content/themes/vfx_new/images/home_banner_bitcoin_0121.jpg' %}); background-position:center bottom; background-repeat:no-repeat; background-size:cover;">
+                        <div class="inner">
+                            <div class="tableBox">
+                                <div class="table_cellBox">
+                                    <div class="text_box">
+                                        <h2>Join the Crypto Revolution and Start Trading Bitcoin CFDs</h2>
+                                        <a class="red_arrow_button" href="{% url 'register' %}">start now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="home_slider_box" style="background-image:url({% static 'fxcryptoprofitltd/wp-content/themes/vfx_new/images/home_banner_img3.jpg' %}); background-position:center top; background-repeat:no-repeat; background-size:cover;">
+                        <div class="inner">
+                            <div class="tableBox">
+                                <div class="table_cellBox">
+                                    <div class="text_box">
+                                        <h2>Navigate Global Market volatility with Daily Email Forex Signals</h2>
+                                        <a class="red_arrow_button" href="{% url 'register' %}">start now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="home_slider_box" style="background-image:url({% static 'fxcryptoprofitltd/wp-content/themes/vfx_new/images/home_banner_img4.jpg' %}); background-position:center top; background-repeat:no-repeat; background-size:cover;">
+                        <div class="inner">
+                            <div class="tableBox">
+                                <div class="table_cellBox">
+                                    <div class="text_box">
+                                        <h2>Get A Better Trading Experience</h2>
+                                        <a class="red_arrow_button" href="{% url 'register' %}">start now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <style>	
+    .banner_bottom{ -moz-box-shadow:0px 3px 3px #e9e9e9; -webkit-box-shadow:0px 3px 3px #e9e9e9;box-shadow:0px 3px 3px #e9e9e9; position:absolute; padding:8px 0px 0px; left:0px; bottom:0px; width:100%; background:#fefdfe; border-top:1px solid #e9e9e9;}
+    .banner_bottom_fixed{ display:none; position:fixed; z-index:99; width:100%; left:0px; bottom:0px;}
+    .banner_bottom_fixed .banner_bottom{ display:block;}
+    .footer_banner_bottom_fixed{position:fixed; z-index:99; width:100%; left:0px; bottom:0px;}
+    .footer_banner_bottom_fixed .banner_bottom{ display:block;}
+    .banner_bottom .banner_bottom_list{box-sizing:border-box;-moz-box-sizing:border-box; -webkit-box-sizing:border-box;font-size: 0; float:left;}
+    .banner_bottom .banner_bottom_list .banner_bottom_list_item{display: inline-block; box-sizing:border-box; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; padding:10px 20px;min-height:56px; position:relative;}
+    .banner_bottom .banner_bottom_list .banner_bottom_list_item:before{ content:""; display:block; width:1px; height:35px; position:absolute; left:0px; top:7px; background:#e7e7e7;}
+    .banner_bottom .banner_bottom_list .banner_bottom_list_item:first-child{padding-left: 0;}
+    .banner_bottom .banner_bottom_list .banner_bottom_list_item:first-child:before{ display:none;}
+    .banner_bottom h2{font-size:30px;color: #2544a2;font-weight: normal;margin:0px; padding:0px;}
+    .banner_bottom h2 .text{font-size:12px;display: inline-block;font-weight: normal;text-align: left;line-height: 1;vertical-align: middle;}
+    .banner_bottom .text_box{ float:left; font-size:17px; color:#2544a2; padding:6px 0px 0px 30px;}
+    .banner_bottom .text_box strong{ display:block;}
+    .banner_bottom .get_started_link{ float:right; text-transform:uppercase; background:#d72b2f; border-radius:5px; text-shadow:0px 0px 1px #FFF; padding:10px 23px 10px 6px; height:38px; line-height:18px; width:152px; color:#FFF; font-size:15px; text-align:center; margin-top:5px; position:relative;}
+    .banner_bottom .get_started_link:hover{ color:#FFF; text-decoration:none;background:#fd0202;}
+    .banner_bottom .get_started_link:after{ content: "\f105";font-family: 'FontAwesome'; position:absolute; right:12px; top:10px;}
+    
+    @media (max-width:990px){
+        .banner_bottom{ display:none !important;}
+    }
+    </style>
+    <div class="banner_bottom">
+        <div class="inner">
+            <div class="banner_bottom_list">
+                <div class="banner_bottom_list_item">
+                    <h2>0.0<span class="text">&nbsp;spreads <br />&nbsp;from</span></h2>
+                </div>
+                <div class="banner_bottom_list_item">
+                    <h2>500:1<span class="text">&nbsp;leverage <br /> &nbsp;up to</span></h2>
+                </div>
+                <div class="banner_bottom_list_item">
+                    <h2>$1000<span class="text">&nbsp;minimum <br />&nbsp;deposit</span></h2>
+                </div>
+                <div class="banner_bottom_list_item">
+                    <h2>$0<span class="text">&nbsp;Deposit <br />&nbsp;fees</span></h2>
+                </div>
+            </div>
+            <div class="text_box">
+                <strong>Fast & Easy</strong>
+                <span>Account Opening</span>
+            </div>
+            <a class="get_started_link" href="{% url 'register' %}">get started</a>
+            <div class="clear"></div>
+        </div>
+    </div></div><div class="home_content">
+        <!--Home Row1 开始-->
+        <style>
+    .home_row1{ padding:62px 0px;}
+    .home_row1 .tab_title{ padding:0px; margin:0px -2px;}
+    .home_row1 .tab_title:after{ content:""; display:block; width:100%; clear:both;}
+    .home_row1 .tab_title li{ padding:0px 2px 4px; margin:0px; float:left;}
+    .home_row1 .tab_title li.tab_title_forex{ width:23.5%;}
+    .home_row1 .tab_title li.tab_title_commodities{ width:26.5%;}
+    .home_row1 .tab_title li.tab_title_indices{ width:21.5%;}
+    .home_row1 .tab_title li.tab_title_share_cfds{ width:28.5%;}
+    .home_row1 .tab_title li span{ display:block; height:50px; background:#e3e7e9; text-transform:uppercase; color:#8e9090; cursor:pointer; border-radius:5px 5px 0px 0px; text-align:center; font-size:19px; padding:15px 3px; line-height:20px;}
+    .home_row1 .tab_title li.active span{ background:#2544a2; color:#FFF;}
+    .home_row1 .tab_list .tab_item{position:absolute;left:-9999px;}
+    .home_row1 .tab_list .tab_item.active{position:relative;left:0;}
+    .home_row1 .tab_list{}
+    .home_row1 .tab_list .tab_item{ border:1px solid #e8e8e8; border-radius:5px; padding:40px 40px 48px; background:#FFF;}
+    .home_row1 .tab_list .text_box{ width:285px; float:left;}
+    .home_row1 .tab_list .text_box h2{ margin:0px 0px 18px; font-weight:bold; font-size:28px; color:#17307d; line-height:1.5; text-align:left; text-transform:none;}
+    .home_row1 .tab_list .text_box h2:after{ display:none;}
+    .home_row1 .tab_list .text_box p{ padding:0px; margin:0px 0px 52px; font-size:15px; color:#17307d; line-height:1.6;}
+    .home_row1 .tab_list .text_box a{ display:block; text-transform:uppercase; background:#d72b2f; border-radius:5px; text-shadow:0px 0px 1px #FFF; padding:10px 27px 10px 2px; height:45px; line-height:25px; width:207px; color:#FFF; font-size:16px; text-align:center; position:relative;}
+    .home_row1 .tab_list .text_box a:hover{ color:#FFF; text-decoration:none;background:#fd0202;}
+    .home_row1 .tab_list .text_box a:after{ content: "\f105";font-family: 'FontAwesome'; position:absolute; right:20px; top:10px;}
+    .home_row1 .tab_list .right_table{ width:476px; float:right; margin-top:6px; margin-left:auto; margin-right:auto;}
+    .home_row1 .tab_list .right_table table{ width:100%;}
+    .home_row1 .tab_list .right_table table tr td{ border-top:1px solid #f1f1f1; padding:14px 5px; color:#2544a2; font-size:16px; width:25%;}
+    .home_row1 .tab_list .right_table table tr:first-child td{ border-top:0px;}
+    .home_row1 .tab_list .right_table table tr td.green_text{ color:#00be00;}
+    .home_row1 .tab_list .right_table table tr td.red_text{ color:#ea1917;}
+    .home_row1 .tab_list .right_table table tr td.black_text{ color:#8e9090;}
+    .home_row1 .tab_list .right_table table tr td:nth-child(2){ text-align:center;}
+    .home_row1 .echarts_wrapper{padding: 0 !important;}
+    .home_row1 .echarts_wrapper > div{height:40px;}
+    .home_row1 .rotate_data{margin: 50px auto;display: block;animation:rotate_data 1s infinite linear;-webkit-animation:rotate_data 1s infinite linear;}
+    .home_row1 .no_data{display: none;text-align: center;margin: 100px auto;color: #8e9090;}
+    @keyframes rotate_data {
+        from {
+            transform: rotate(0);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+    @-moz-keyframes rotate_data
+    {
+        from {
+            transform: rotate(0);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+    
+    @-webkit-keyframes rotate_data
+    {
+        from {
+            transform: rotate(0);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+    
+    @-o-keyframes rotate_data
+    {
+        from {
+            transform: rotate(0);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+    @media (max-width:900px){
+        .home_row1 .tab_list .text_box{ width:100%; float:none; padding-bottom:30px;}
+        .home_row1 .tab_list .text_box p{ margin-bottom:25px;}
+        .home_row1 .tab_list .right_table{ float:none; max-width:100%;}
+    }
+    @media (max-width:768px){
+        .home_row1 .tab_list .text_box h2{ font-size:24px;}
+        .home_row1 .tab_title li.tab_title_forex,
+        .home_row1 .tab_title li.tab_title_commodities,
+        .home_row1 .tab_title li.tab_title_indices,
+        .home_row1 .tab_title li.tab_title_share_cfds{ width:50%;}
+        .home_row1 .tab_title li span{ font-size:16px;}
+    }
+    @media (max-width:600px){
+        .home_row1 .tab_list .right_table{ overflow-x:scroll;}
+        .home_row1 .tab_list .right_table table{ width:476px;}
+    }
+    @media (max-width:420px){
+        .home_row1 .tab_list .tab_item{ padding-left:20px; padding-right:20px;}
+    }
+    </style>
+    
+    
+    
+    <script src="{% static 'fxcryptoprofitltd/wp-content/themes/vfx_new/js/math.min.js' %}"></script>
+    <script src="{% static 'fxcryptoprofitltd/wp-content/themes/vfx_new/js/product_echarts8129.js?v=1611513045' %}"></script>    <!--Home Row1 结束-->
+    
+        <!--Home Row2 开始-->
+        <br/>
+	<div class="home_row2">
+    	<div class="inner">
+       		<div class="home_row2_content">
+				<div class="text_box">
+					<h2>Start Trading with a<br /><strong>leading regulated broker</strong></h2>
+					<p>FX Crypto Profit Ltd is a <strong>regulated</strong> Forex broker, providing traders with access to the global Forex market through top tier FX liquidity providers.</p>
+					<p>With FX Crypto Profit Ltd, you will experience super-fast trade execution, RAW ECN spreads.  When combined, these elements offer clients a true institutional trading experience, across a wide range of trading instruments.</p>
+					<p>Clients can access our wide range of markets through the powerful <strong>MetaTrader 4</strong> &amp; <strong>MetaTrader 5</strong> platforms, as well as WebTrader and multiple mobile trading apps for iPhone and Android devices.</p>
+					<h3>Gain YOUR trading advantage with FX Crypto Profit Ltd.</h3>
+				</div>
+				<div class="img_box video_home">
+                	<img src="{% static 'fxcryptoprofitltd/wp-content/themes/vfx_new/images/home_video_img0416.png' %}" alt="" />
+				</div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+    <!--Home Row2 结束-->
+
+    <!--Home Row3 开始-->
+	<style>
+.home_row3{ background:url({% static 'fxcryptoprofitltd/wp-content/themes/vfx_new/images/home_row3_bg.jpg' %}); center top no-repeat; background-size:cover;}
+.home_row3 .inner{ padding-top:70px; padding-bottom:45px;}
+.home_row3 .text_box{width:48%; float:right;}
+.home_row3 .text_box h2{ margin:0px 0px 36px; color:#FFF; font-size:30px; font-weight:bold; text-align:left; text-transform:none;}
+.home_row3 .text_box h2:after{ display:none;}
+.home_row3 .text_box p{ padding:0px; margin:0px 0px 22px; font-size:15px; color:#FFF; line-height:1.7;}
+.home_row3 .img_box{width:49.5%; float:left; margin-left:-35px; padding:38px 0px 0px 0px;}
+.home_row3 .img_box img{ display:block; width:100%; height:auto;}
+.home_row3 .text_box a{ display: inline-block; text-transform:uppercase; background:#d72b2f; border-radius:5px; text-shadow:0px 0px 1px #FFF; text-align:center; padding:10px 26px 10px 0px; height:45px; line-height:25px; width:230px; color:#FFF; font-size:16px;  position:relative;}
+.home_row3 .text_box a:hover{background:#fd0202;color:#FFF; text-decoration:none;}
+.home_row3 .text_box a:after{ content: "\f105";font-family: 'FontAwesome'; position:absolute; right:20px; top:10px;}
+.home_row3 .text_box_inner{ padding:28px 0px 0px;}
+.home_row3 .text_box_inner a{ float:left;}
+.home_row3 .text_box_inner img{ float:right;}
+
+@media (max-width:768px){
+	.home_row3 .text_box{ float:none; width:100%;}
+	.home_row3 .text_box h2{ font-size:24px; margin-bottom:30px;}
+	.home_row3 .img_box{ width:474px; max-width:100%; float: none; margin:0px auto; padding-top:0px;}
+}
+@media (max-width:420px){
+	.home_row3 .inner{ padding-top:40px; padding-bottom:20px;}
+	.home_row3 .text_box_inner{ text-align:center; padding-top:0px;}
+	.home_row3 .text_box_inner a{ float:none; display:inline-block; margin-bottom:5px; vertical-align:middle;}
+	.home_row3 .text_box_inner img{ float:none; display: inline-block; margin:5px; vertical-align:middle;}
+}
+</style>
+<div class="home_row3">
+    <div class="inner">
+        <div class="img_box">
+            <img src="{% static 'fxcryptoprofitltd/wp-content/themes/vfx_new/images/home_row3_content_left_img.png' %}" alt="" />
+        </div>
+        <div class="text_box">
+            <h2>Trade with Even Lower Costs</h2>
+            <p>With our RAW ECN account, traders can experience some of the lowest trading costs in the industry. We fully understand the importance of keeping trading costs to a minimum, so you can realise greater profit.</p>
+            <p>Experience the difference with FX Crypto Profit Ltd today.</p>
+            <div class="text_box_inner">
+                <a href="{% url 'register' %}">open A live account</a>
+                <img src="{% static 'fxcryptoprofitltd/wp-content/themes/vfx_new/images/home_row3_content_right_img.png' %}" alt="" />
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>    <!--Home Row3 结束-->
+
+    <!--Home Row4 开始-->
+	<div class="home_row4">
+    	<div class="inner">
+        	<div class="home_row4_content">
+                <h2><strong>Next Generation</strong> Forex Broker</h2>
+                <div class="home_forex_broker_list">
+                    <div class="home_forex_broker_item">
+                        <div class="home_forex_broker_item_box">
+                            <div class="home_forex_broker_item_img">
+                                <span class="home_forex_broker_icon1"></span>
+                            </div>
+                        </div>
+                        <h4>The Lowest<br />Trading Costs</h4>
+                    </div>
+                    <div class="home_forex_broker_item">
+                        <div class="home_forex_broker_item_box">
+                            <div class="home_forex_broker_item_img">
+                                <span class="home_forex_broker_icon2"></span>
+                            </div>
+                        </div>
+                        <h4>50% Welcome<br />Bonus</h4>
+                    </div>
+                    <div class="home_forex_broker_item">
+                        <div class="home_forex_broker_item_box">
+                            <div class="home_forex_broker_item_img">
+                                <span class="home_forex_broker_icon3"></span>
+                            </div>
+                        </div>
+                        <h4>Lightning<br />Fast Execution</h4>
+                    </div>
+                    <div class="home_forex_broker_item">
+                        <div class="home_forex_broker_item_box">
+                            <div class="home_forex_broker_item_img">
+                                <span class="home_forex_broker_icon4"></span>
+                            </div>
+                        </div>
+                        <h4>Award-winning<br />24 Hour Support</h4>
+                    </div>
+                    <div class="home_forex_broker_item">
+                        <div class="home_forex_broker_item_box">
+                            <div class="home_forex_broker_item_img">
+                                <span class="home_forex_broker_icon5"></span>
+                            </div>
+                        </div>
+                        <h4>Free Forex<br />Signals</h4>
+                    </div>
+                    <div class="home_forex_broker_item">
+                        <div class="home_forex_broker_item_box">
+                            <div class="home_forex_broker_item_img">
+                                <span class="home_forex_broker_icon6"></span>
+                            </div>
+                        </div>
+                        <h4>Negative<br />Balance Protection</h4>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Home Row4 结束-->
+
+	 <!--Home Row5 开始-->
+     <div class="home_row5">
+        <div class="inner">
+            
+            <div class="home_row5_left">
+                <div class="home_row5_top">
+                    <ul class="tab_title">
+                        <li class="active"><span>Forex</span></li>
+                        <li><span>Indices</span></li>
+                        <li><span>Commodities</span></li>
+                        <li><span>SHARE CFDs</span></li>
+                    </ul>
+                    <div class="tab_list">
+                        <div class="loading"><img class="rotate" src="{% static 'fxcryptoprofitltd/wp-content/themes/vfx_new/images/newdemo_londing.png' %}" alt="" /></div>
+                        <div class="tab_item tab_item1 active">
+                            <div class="tab_item_con">
+                                <table align="center" border="0" cellpadding="0" cellspacing="0" style=" padding:0px; margin:0px;">
+                                    <tbody id="row5_tbody1">
+                                        <tr class="row5_tbody_top white_back">
+                                            <td> </td>
+                                            <td>SYMBOL</td>
+                                            <td>BID</td>
+                                            <td>ASK</td>
+                                            <td>SPREAD</td>
+                                        </tr>
+                                        <tr class="products gray_back">
+                                            <td><img src="{% static 'fxcryptoprofitltd/wp-content/themes/vfx_new/images/home_row1_tab_forex_img2.png' %}" alt=""></td>
+                                            <td class="symbol">EURUSD</td>
+                                            <td class="bid_text"></td>
+                                            <td class="ask_text"></td>
+                                            <td class="spr_text"><span></span></td>
+                                        </tr>
+                                        <tr class="products white_back">
+                                            <td><img src="{% static 'fxcryptoprofitltd/wp-content/themes/vfx_new/images/home_row1_tab_forex_img1.png' %}" alt=""></td>
+                                            <td class="symbol">AUDUSD</td>
+                                            <td class="bid_text"></td>
+                                            <td class="ask_text"></td>
+                                            <td class="spr_text"><span></span></td>
+                                        </tr>
+                                        <tr class="products gray_back">
+                                            <td><img src="{% static 'fxcryptoprofitltd/wp-content/themes/vfx_new/images/home_row1_tab_forex_img3.png' %}" alt=""></td>
+                                            <td class="symbol">GBPUSD</td>
+                                            <td class="bid_text"></td>
+                                            <td class="ask_text"></td>
+                                            <td class="spr_text"><span></span></td>
+                                        </tr>
+                                        <tr class="products white_back">
+                                            <td><img src="{% static 'fxcryptoprofitltd/wp-content/themes/vfx_new/images/home_row1_tab_forex_img4.png' %}" alt=""></td>
+                                            <td class="symbol">USDJPY</td>
+                                            <td class="bid_text"></td>
+                                            <td class="ask_text"></td>
+                                            <td class="spr_text"><span></span></td>
+                                        </tr>
+                                        <tr class="row5_tbody_buttom gray_back">
+                                            <td colspan="5"><img src="{% static 'fxcryptoprofitltd/wp-content/themes/vfx_new/images/home_row5_tbody_buttom.png' %}" alt=""></td>
+                                        </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="tab_item tab_item2">
+                            <div class="tab_item_con">
+                                <table align="center" border="0" cellpadding="0" cellspacing="0" style=" padding:0px; margin:0px;">
+                                    <tbody id="row5_tbody3">
+                                        <tr class="row5_tbody_top white_back">
+                                            <td> </td>
+                                            <td>SYMBOL</td>
+                                            <td>BID</td>
+                                            <td>ASK</td>
+                                            <td>SPREAD</td>
+                                        </tr>
+                                        <tr class="products gray_back">
+                                            <td><img src="{% static 'fxcryptoprofitltd/wp-content/themes/vfx_new/images/home_row1_tab_indices_img1.png' %}" alt=""></td>
+                                            <td class="symbol">SPI200</td>
+                                            <td class="bid_text"></td>
+                                            <td class="ask_text"></td>
+                                            <td class="spr_text"><span></span></td>
+                                        </tr>
+                                        <tr class="products white_back">
+                                            <td><img src="{% static 'fxcryptoprofitltd/wp-content/themes/vfx_new/images/home_row1_tab_indices_img2.png' %}" alt=""></td>
+                                            <td class="symbol">DAX30</td>
+                                            <td class="bid_text"></td>
+                                            <td class="ask_text"></td>
+                                            <td class="spr_text"><span></span></td>
+                                        </tr>
+                                        <tr class="products gray_back">
+                                            <td><img src="{% static 'fxcryptoprofitltd/wp-content/themes/vfx_new/images/home_row1_tab_indices_img3.png' %}" alt=""></td>
+                                            <td class="symbol">SP500</td>
+                                            <td class="bid_text"></td>
+                                            <td class="ask_text"></td>
+                                            <td class="spr_text"><span></span></td>
+                                        </tr>
+                                        <tr class="products white_back">
+                                            <td><img src="{% static 'fxcryptoprofitltd/wp-content/themes/vfx_new/images/home_row1_tab_indices_img3.png' %}" alt=""></td>
+                                            <td class="symbol">DJ30</td>
+                                            <td class="bid_text"></td>
+                                            <td class="ask_text"></td>
+                                            <td class="spr_text"><span></span></td>
+                                        </tr>
+                                        <tr class="row5_tbody_buttom gray_back">
+                                            <td colspan="5"><img src="{% static 'fxcryptoprofitltd/wp-content/themes/vfx_new/images/home_row5_tbody_buttom.png' %}" alt=""></td>
+                                        </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="tab_item tab_item3">
+                            <div class="tab_item_con">
+                                <table align="center" border="0" cellpadding="0" cellspacing="0" style=" padding:0px; margin:0px;">
+                                    <tbody id="row5_tbody2">
+                                        <tr class="row5_tbody_top white_back">
+                                            <td> </td>
+                                            <td>SYMBOL</td>
+                                            <td>BID</td>
+                                            <td>ASK</td>
+                                            <td>SPREAD</td>
+                                        </tr>
+                                        <tr class="products gray_back">
+                                            <td><img src="{% static 'fxcryptoprofitltd/wp-content/themes/vfx_new/images/home_row1_tab_commodities_img1.png' %}" alt=""></td>
+                                            <td class="symbol">CL-OIL</td>
+                                            <td class="bid_text"></td>
+                                            <td class="ask_text"></td>
+                                            <td class="spr_text"><span></span></td>
+                                        </tr>
+                                        <tr class="products white_back">
+                                            <td><img src="{% static 'fxcryptoprofitltd/wp-content/themes/vfx_new/images/home_row1_tab_commodities_img3.png' %}" alt=""></td>
+                                            <td class="symbol">XAGUSD</td>
+                                            <td class="bid_text"></td>
+                                            <td class="ask_text"></td>
+                                            <td class="spr_text"><span></span></td>
+                                        </tr>
+                                        <tr class="products gray_back">
+                                            <td><img src="{% static 'fxcryptoprofitltd/wp-content/themes/vfx_new/images/home_row1_tab_commodities_img2.png' %}" alt=""></td>
+                                            <td class="symbol">XAUUSD</td>
+                                            <td class="bid_text"></td>
+                                            <td class="ask_text"></td>
+                                            <td class="spr_text"><span></span></td>
+                                        </tr>
+                                        <tr class="white_back" style="height: 56px;">
+
+                                        </tr>
+                                        <tr class="row5_tbody_buttom gray_back">
+                                            <td colspan="5"><img src="{% static 'fxcryptoprofitltd/wp-content/themes/vfx_new/images/home_row5_tbody_buttom.png' %}" alt=""></td>
+                                        </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="tab_item tab_item4">
+                            <div class="tab_item_con">
+                                <table align="center" border="0" cellpadding="0" cellspacing="0" style=" padding:0px; margin:0px;">
+                                    <tbody id="row5_tbody4">
+                                        <tr class="row5_tbody_top white_back">
+                                            <td> </td>
+                                            <td>SYMBOL</td>
+                                            <td>BID</td>
+                                            <td>ASK</td>
+                                            <td>SPREAD</td>
+                                        </tr>
+                                        <tr class="products gray_back">
+                                            <td><img src="{% static 'fxcryptoprofitltd/wp-content/themes/vfx_new/images/home_row1_tab_share_cfds_img1.png' %}" alt=""></td>
+                                            <td class="symbol">Apple</td>
+                                            <td class="bid_text"></td>
+                                            <td class="ask_text"></td>
+                                            <td class="spr_text"><span></span></td>
+                                        </tr>
+                                        <tr class="products white_back">
+                                            <td><img src="{% static 'fxcryptoprofitltd/wp-content/themes/vfx_new/images/home_row1_tab_share_cfds_img3.png' %}" alt=""></td>
+                                            <td class="symbol">Facebook</td>
+                                            <td class="bid_text"></td>
+                                            <td class="ask_text"></td>
+                                            <td class="spr_text"><span></span></td>
+                                        </tr>
+                                        <tr class="products gray_back">
+                                            <td><img src="{% static 'fxcryptoprofitltd/wp-content/themes/vfx_new/images/home_row1_tab_share_cfds_img4.png' %}" alt=""></td>
+                                            <td class="symbol">Netflix</td>
+                                            <td class="bid_text"></td>
+                                            <td class="ask_text"></td>
+                                            <td class="spr_text"><span></span></td>
+                                        </tr>
+                                        <tr class="products white_back">
+                                            <td><img src="{% static 'fxcryptoprofitltd/wp-content/themes/vfx_new/images/home_row1_tab_share_cfds_img2.png' %}" alt=""></td>
+                                            <td class="symbol">Google</td>
+                                            <td class="bid_text"></td>
+                                            <td class="ask_text"></td>
+                                            <td class="spr_text"><span></span></td>
+                                        </tr>
+                                        <tr class="row5_tbody_buttom gray_back">
+                                            <td colspan="5"><img src="{% static 'fxcryptoprofitltd/wp-content/themes/vfx_new/images/home_row5_tbody_buttom.png' %}" alt=""></td>
+                                        </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+<br/><br/><br/><br/>
+
+                <h2>Our<strong>  Packages</strong></h2>
+                <div class="home_row5_video">
+                    
+                    <div class="home_row5_video_box video_left ml-3" style="text-align: center;">
+                        
+                      
+                        <h4 style="text-align: center; color:#d72b2f;">BRONZE</h4>
+                        <h6 class="text-center" style="text-align:center; color:#2544a2;">$1,000 to $2000</h6>
+                        <h6 class="text-center" style="text-align: center; color:#2544a2;">/Minimum Deposit</h6>
+                        <p style="color:#2544a2; font-style:bold; text-align:center"> <i class="fa fa-check" style="color: #d72b2f;"></i> 50+ assets/products</p>
+                        <p style="color:#2544a2; font-style:bold; text-align:center"> <i class="fa fa-times" style="color: #d72b2f;"></i> Variable spreads </p>
+                        <p style="color:#2544a2; font-style:bold; text-align:center"> <i class="fa fa-times" style="color: #d72b2f;"></i> Up to 1: 1000 leverage </p>
+                        <p style="color:#2544a2; font-style:bold; text-align:center"> <i class="fa fa-check" style="color: #d72b2f;"></i> Fixed spreads </p>
+                        <p style="color:#2544a2; font-style:bold; text-align:center"> <i class="fa fa-times" style="color: #d72b2f;"></i> Free signals </p>
+                        <p style="color:#2544a2; font-style:bold; text-align:center"> <i class="fa fa-times" style="color: #d72b2f;"></i>  Risk management support </p>
+                        <p style="color:#2544a2; font-style:bold; text-align:center"> <i class="fa fa-check" style="color: #d72b2f;"></i> 24/7 support </p>
+                        <p style="color:#2544a2; font-style:bold; text-align:center"> <i class="fa fa-check" style="color: #d72b2f;"></i> Instant withdrawal </p>
+                        <p style="color:#2544a2; font-style:bold; text-align:center"> <i class="fa fa-check" style="color: #d72b2f;"></i>  Account manager </p>
+                        <br/>
+                        <a class="red_arrow_button" style="text-align:center" href="{% url 'register' %}">Get Plan</a>
+                    </div>
+                    <div class="home_row5_video_box video_left ml-3" style="text-align: center;">
+                        
+                      
+                        <h4 style="text-align: center; color:#d72b2f;">SILVER</h4>
+                        <h6 class="text-center" style="text-align:center; color:#2544a2;">$5,000 to $10,000</h6>
+                        <h6 class="text-center" style="text-align: center; color:#2544a2;">/Minimum Deposit</h6>
+                        <p style="color:#2544a2; font-style:bold; text-align:center"> <i class="fa fa-check" style="color: #d72b2f;"></i> 100+ assets/products</p>
+                        <p style="color:#2544a2; font-style:bold; text-align:center"> <i class="fa fa-times" style="color: #d72b2f;"></i> Variable spreads </p>
+                        <p style="color:#2544a2; font-style:bold; text-align:center"> <i class="fa fa-times" style="color: #d72b2f;"></i> Up to 1: 1000 leverage </p>
+                        <p style="color:#2544a2; font-style:bold; text-align:center"> <i class="fa fa-check" style="color: #d72b2f;"></i> Fixed spreads </p>
+                        <p style="color:#2544a2; font-style:bold; text-align:center"> <i class="fa fa-check" style="color: #d72b2f;"></i> Free signals </p>
+                        <p style="color:#2544a2; font-style:bold; text-align:center"> <i class="fa fa-times" style="color: #d72b2f;"></i>  Risk management support </p>
+                        <p style="color:#2544a2; font-style:bold; text-align:center"> <i class="fa fa-check" style="color: #d72b2f;"></i> 24/7 support </p>
+                        <p style="color:#2544a2; font-style:bold; text-align:center"> <i class="fa fa-check" style="color: #d72b2f;"></i> Instant withdrawal </p>
+                        <p style="color:#2544a2; font-style:bold; text-align:center"> <i class="fa fa-check" style="color: #d72b2f;"></i>  Account manager </p>
+                        <br/>
+                        <a class="red_arrow_button" style="text-align:center" href="{% url 'register' %}">Get Plan</a>
+                    </div>
+                    <div class="home_row5_video_box video_left ml-3" style="text-align: center;">
+                        
+                      
+                        <h4 style="text-align: center; color:#d72b2f;">GOLD</h4>
+                        <h6 class="text-center" style="text-align:center; color:#2544a2;">$10,000 to $15,000</h6>
+                        <h6 class="text-center" style="text-align: center; color:#2544a2;">/Minimum Deposit</h6>
+                        <p style="color:#2544a2; font-style:bold; text-align:center"> <i class="fa fa-check" style="color: #d72b2f;"></i> 150+ assets/products</p>
+                        <p style="color:#2544a2; font-style:bold; text-align:center"> <i class="fa fa-times" style="color: #d72b2f;"></i> Variable spreads </p>
+                        <p style="color:#2544a2; font-style:bold; text-align:center"> <i class="fa fa-times" style="color: #d72b2f;"></i> Up to 1: 1000 leverage </p>
+                        <p style="color:#2544a2; font-style:bold; text-align:center"> <i class="fa fa-check" style="color: #d72b2f;"></i> Fixed spreads </p>
+                        <p style="color:#2544a2; font-style:bold; text-align:center"> <i class="fa fa-check" style="color: #d72b2f;"></i> Free signals </p>
+                        <p style="color:#2544a2; font-style:bold; text-align:center"> <i class="fa fa-check" style="color: #d72b2f;"></i>  Risk management support </p>
+                        <p style="color:#2544a2; font-style:bold; text-align:center"> <i class="fa fa-check" style="color: #d72b2f;"></i> 24/7 support </p>
+                        <p style="color:#2544a2; font-style:bold; text-align:center"> <i class="fa fa-check" style="color: #d72b2f;"></i> Instant withdrawal </p>
+                        <p style="color:#2544a2; font-style:bold; text-align:center"> <i class="fa fa-check" style="color: #d72b2f;"></i>  Account manager </p>
+                        <br/>
+                        <a class="red_arrow_button" style="text-align:center" href="{% url 'register' %}">Get Plan</a>
+                    </div>
+                   
+
+                    <div class="home_row5_video_box video_left ml-3" style="text-align: center;">
+                        
+                      
+                        <h4 style="text-align: center; color:#d72b2f;">PLATINUM</h4>
+                        <h6 class="text-center" style="text-align:center; color:#2544a2;">$15,000 to $20,000</h6>
+                        <h6 class="text-center" style="text-align: center; color:#2544a2;">/Minimum Deposit</h6>
+                        <p style="color:#2544a2; font-style:bold; text-align:center"> <i class="fa fa-check" style="color: #d72b2f;"></i> Unlimited assets/products</p>
+                        <p style="color:#2544a2; font-style:bold; text-align:center"> <i class="fa fa-check" style="color: #d72b2f;"></i> Variable spreads </p>
+                        <p style="color:#2544a2; font-style:bold; text-align:center"> <i class="fa fa-check" style="color: #d72b2f;"></i> Up to 1: 1000 leverage </p>
+                        <p style="color:#2544a2; font-style:bold; text-align:center"> <i class="fa fa-check" style="color: #d72b2f;"></i> Fixed spreads </p>
+                        <p style="color:#2544a2; font-style:bold; text-align:center"> <i class="fa fa-check" style="color: #d72b2f;"></i> Free signals </p>
+                        <p style="color:#2544a2; font-style:bold; text-align:center"> <i class="fa fa-check" style="color: #d72b2f;"></i> Risk management support </p>
+                        <p style="color:#2544a2; font-style:bold; text-align:center"> <i class="fa fa-check" style="color: #d72b2f;"></i> 24/7 support </p>
+                        <p style="color:#2544a2; font-style:bold; text-align:center"> <i class="fa fa-check" style="color: #d72b2f;"></i> Instant withdrawal </p>
+                        <p style="color:#2544a2; font-style:bold; text-align:center"> <i class="fa fa-check" style="color: #d72b2f;"></i> Account manager </p>
+                        <br/>
+                        <a class="red_arrow_button" style="text-align:center" href="{% url 'register' %}">Get Plan</a>
+                    </div>
+
+                </div>
+            </div>
+           
+            <div class="clear"></div>
+        </div>
+    </div>
+    <!--Home Row5 结束-->
+
+    <!--Home Row6 开始-->
+	<div class="home_row6">
+    	<div class="inner">
+        	<h2>trade your way <strong>FX Crypto Profit Ltd</strong></h2>
+            <ul class="home_three_rows">
+            	<li>
+                	<div class="home_three_rows_box">
+                        <div class="img_box"><img src="{% static 'fxcryptoprofitltd/wp-content/themes/vfx_new/images/home_row6_img1.jpg' %}" alt="" /></div>
+                        <div class="text_box">
+                            <div class="text_box_inner">
+                            	<p>trade with lower costS</p>
+                            </div>
+                        </div>
+                
+                    </div>
+                </li>
+                <li>
+                	<div class="home_three_rows_box">
+                        <div class="img_box"><img src="{% static 'fxcryptoprofitltd/wp-content/themes/vfx_new/images/home_row6_img2.jpg' %}" alt="" /></div>
+                        <div class="text_box">
+                            <div class="text_box_inner">
+                            	<p>regulated forex broker</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </li>
+                <li>
+                	<div class="home_three_rows_box">
+                        <div class="img_box"><img src="{% static 'fxcryptoprofitltd/wp-content/themes/vfx_new/images/home_row6_img3.jpg' %}" alt="" /><span class="new_icon"></span></div>
+                        <div class="text_box">
+                            <div class="text_box_inner">
+                            	<p>experience metatrader 5</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </li>
+            </ul>
+			<div class="clear"></div>
+        </div>
+    </div>
+    <!--Home Row6 结束-->
+
+    <!--Home Row7 开始-->
+	
+    <!--Home Row7 结束-->
+
+    <!--Home Row8 开始-->
+	<style>
+.home_row8 .inner{ padding-top:150px; padding-bottom:50px;}
+.home_row8 h2{ font-size:28px; text-align:center; margin-bottom:48px;}
+.home_row8 ul.home_three_rows{ padding:0px; margin:0px -12px;}
+.home_row8 ul:after{ content:""; display:block; clear:both;}
+
+.home_row8 .home_three_rows li{ padding:0px; margin:0px; width:33.3333%; float:left; padding:0px 12px 20px;}
+.home_row8 .home_three_rows li .home_three_rows_box{ width:100%; border:1px solid #e8e8e8; background:#FFF; padding-bottom:20px; text-align:center;}
+.home_row8 .home_three_rows li .home_three_rows_box .img_box{ position:relative;}
+.home_row8 .home_three_rows li .home_three_rows_box .img_box img{ display:block; width:100%; height:auto;}
+.home_row8 .home_three_rows li .home_three_rows_box .img_box span.new_icon{ display:block; width:112px; height:82px; background:url({% static 'fxcryptoprofitltd/wp-content/themes/vfx_new/images/home_sprite_img.png' %}) -608px 0px no-repeat; position:absolute; left:-3px; top:-1px;}
+.home_row8 .home_three_rows li .home_three_rows_box p{ line-height:1.2; padding:21px 15px 12px; margin:0px; font-size:17px; color:#2544a2; text-transform:uppercase;}
+.home_row8 .home_three_rows li .home_three_rows_box a{ padding:7px 5px 7px; background:#2450d7; border-radius:3px; display:inline-block; width:132px; font-size:14px; color:#FFF; text-transform:uppercase;}
+.home_row8 .home_three_rows li .home_three_rows_box a:hover{background: #2a5cf5;}
+@media (max-width:900px){
+	.home_row8 .inner{ padding-top:100px;}
+}
+@media (max-width:768px){
+	.home_row8 .inner{ padding-top:50px;}
+	.home_row8 .home_three_rows{ margin-left:0px; margin-right:0px;}
+	.home_row8 .home_three_rows li{ width:320px; max-width:100%; float:none; margin:0px auto; padding:0px 0px 30px;}
+}
+</style>
+<div class="home_row8">
+    <div class="inner">
+        <h2 class="page_title_center">Switch to FX Crypto Profit Ltd Today and <strong>Experience the Difference</strong></h2>
+        <ul class="home_three_rows">
+            <li>
+                <div class="home_three_rows_box">
+                    <div class="img_box"><img src="{% static 'fxcryptoprofitltd/wp-content/themes/vfx_new/images/home_row8_img14a47.jpg' %}" alt="" /></div>
+                    <div class="text_box">
+                        <div class="text_box_inner">
+                            <p>50% welcome bonus</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </li>
+            <li>
+                <div class="home_three_rows_box">
+                    <div class="img_box"><img src="{% static 'fxcryptoprofitltd/wp-content/themes/vfx_new/images/home_row8_img24a4e.jpg' %}" alt="" /></div>
+                    <div class="text_box">
+                        <div class="text_box_inner">
+                            <p>FEATURED IDEAS SIGNALS</p>
+                        </div>
+                    </div>
+                   
+                </div>
+            </li>
+            <li>
+                <div class="home_three_rows_box">
+                    <div class="img_box"><img src="{% static 'fxcryptoprofitltd/wp-content/themes/vfx_new/images/home_row8_img34a47.jpg' %}" alt="" /></div>
+                    <div class="text_box">
+                        <div class="text_box_inner">
+                            <p>PROFESSIONAL TRADING</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </li>
+        </ul>
+        <div class="clear"></div>
+    </div>
+</div>    <!--Home Row8 结束-->
+
+
+
+
+<!--about-div-->
+<div class="page_content">
+    <div class="inner">
+        <div class="page_top_text">
+<h2><strong>ABOUT US</strong></h2>
+<p>FX Crypto Profit Ltd was founded by a highly-specialised team with backgrounds in Finance, FOREX and Technology. Created to help clients pursue their financial goals, we proudly offer transparent access to the FOREX market, powerful trading platforms (MT4 and MT5), exceptional execution speed, and award-winning customer service.</p>
+<p>Given our strong background, we have always been able to offer superior access to global FOREX markets, which is why professional and retail traders are able to notice the remarkable difference between FX Crypto Profit Ltd and other brokers.</p>
+<p>We continually strive to evolve our offering to ensure that we deliver a service that is far superior to anything else on the market.<br />
+Smart traders make smart decisions, so become a FX Crypto Profit Ltd client today and experience the difference.</p>
+<div class="clear"></div>
+</div>
+        <div class="pages_text_and_image_row text_and_image_position_right">
+<div class="text_and_image_inner">
+    <div class="text_box"><h3>FX Crypto Profit Ltd Values</h3>
+<p>At FX Crypto Profit Ltd, it is important for us to provide complete transparency in an often cloudy industry. That is why we go over and above to make ourselves available to fulfil the needs of our clients and continue to deliver an exceptionally reliable service.</p>
+<p>Understanding that our clients’ trust must be earned is what sets us apart from other brokers. As such, we stand to offer our clients the best service possible, actively promoting integrity and ethical practices throughout the FOREX industry.</p>
+<p>Strong from our reputation of integrity, we proudly align our interests with that of our clients and hold ourselves completely accountable for our offering, ensuring our high standards are never compromised.</p>
+</div>
+
+    <div class="img_box" style="background-image:url({% static 'fxcryptoprofitltd/wp-content/themes/vfx_new/images/education_post_img66.jpg' %}); background-position:center top; background-repeat:no-repeat; background-size:cover;">
+        <img src="{% static 'fxcryptoprofitltd/wp-content/themes/vfx_new/images/education_post_img66.jpg' %}" alt="" />
+                    <span>
+            <strong>Regulated </strong><br>FX broker                                                <img src="{% static 'fxcryptoprofitltd/wp-content/themes/vfx_new/images/pages_text_and_image_on_text_r1.png' %}" alt="" />
+                        </span>
+                </div>
+    <div class="clear"></div>
+</div>
+</div>
+    </div>
+    
+    <div class="inner">
+        <div class="pages_text_and_image_row text_and_image_position_left">
+<div class="text_and_image_inner">
+    <div class="text_box"><h3>Standards and Safety</h3>
+<p>As a leading Forex broker, we uphold the highest standards of regulation and compliance.</p>
+<p>We are also strictly audited and keep all client funds in a segregated trust account, to ensure your money is protected.</p>
+<ul class="text_box_list_img">
+
+</ul>
+</div>
+
+            
+    <div class="img_box" style="background-image:url({% static 'fxcryptoprofitltd/wp-content/themes/vfx_new/images/who-is-list.jpg' %}); background-position:center top; background-repeat:no-repeat; background-size:cover;">
+        <img src="{% static 'fxcryptoprofitltd/wp-content/themes/vfx_new/images/who-is-list.jpg' %}" alt="" />
+                    <span>
+            <strong>SEGREGATED </strong><br>CLIENT FUNDS                                <img src="{% static 'fxcryptoprofitltd/wp-content/themes/vfx_new/images/pages_text_and_image_on_text_l2.png' %}" alt="" />
+                                        </span>
+                </div>
+    <div class="clear"></div>
+</div>
+</div>
+    </div>
+</div>
+</div>
+<!--end about div-->
+
+
+<!--account compare-->
+
+<div class="compare_forex">
+<div class="compare_forex_content">
+    <div class="inner">
+        <h2 class="page_title_center"><strong>Trading Accounts </strong> FOR ALL TRADING LEVELS</h2>
+        <div class="table_body">
+            <!-- standard -->
+            <div class="table_body_item">
+                <div class="shadow_list">
+                     <div class="table_head">
+                        <div class="table_item_header">
+                            <div class="table_item_header_inner">
+                                <img src="{% static 'fxcryptoprofitltd/wp-content/themes/vfx_new/images/compare_stand_header.png' %}"/>
+                                <p><strong>Standard STP</strong> Account is perfect for novice traders who want simple, direct market access with no commissions</p>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="table_content">
+                        <li class="row">
+                            <p class="row_left">
+                                Platform
+                            </p>
+                            <p class="row_right">
+                                MetaTrader 4 <br />
+                                MetaTrader 5
+                            </p>
+                        </li>
+
+                        <li class="row">
+                            <p class="row_left">
+                                Execution Type
+                            </p>
+                            <p class="row_right">
+                                STP
+                            </p>
+                        </li>
+
+                        <li class="row">
+                            <p class="row_left">
+                                Range of Markets
+                            </p>
+                            <p class="row_right">
+                                44 Currency pairs<br />
+                                16 Indices<br />
+                                19 Commodities<br />
+                                226 Share CFDs
+                            </p>
+                        </li>
+
+                        <li class="row">
+                            <p class="row_left">
+                                Platform Choices
+                            </p>
+                            <p class="row_right">
+                                
+                                WebTrader<br />
+                                
+                            </p>
+                        </li>
+
+                        <li class="row">
+                            <p class="row_left">
+                                Minimum Deposit
+                            </p>
+                            <p class="row_right">
+                                $1000
+                            </p>
+                        </li>
+
+                        <li class="row">
+                            <p class="row_left">
+                                Minimum Trade Size
+                            </p>
+                            <p class="row_right">
+                                0.01 lot
+                            </p>
+                        </li>
+
+                        <li class="row">
+                            <p class="row_left">
+                                Leverage
+                            </p>
+                            <p class="row_right">
+                                Up to 500:1
+                            </p>
+                        </li>
+
+                        <li class="row">
+                            <p class="row_left">
+                                Spreads from
+                            </p>
+                            <p class="row_right">
+                                1.4 pips
+                            </p>
+                        </li>
+                        
+                        
+                        
+                        <li class="row">
+                            <a href="{% url 'standard_stp_page' %}" class="more red_button">find out more</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            <!-- raw -->
+            <div class="table_body_item table_body_item2">
+                <div class="shadow_list">
+                    <div class="table_head">
+                        <div class="table_item_header">
+                            <div class="table_item_header_inner">
+                                <img src="{% static 'fxcryptoprofitltd/wp-content/themes/vfx_new/images/compare_raw_header.png' %}"/>
+                                <img src="{% static 'fxcryptoprofitltd/wp-content/themes/vfx_new/images/compare_popular_header.png' %}" class="popular"/>
+                                <p><strong>RAW ECN</strong> is designed for the experienced trader who requires deep liquidity and razor sharp spreads</p>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="table_content">
+                        <li class="row">
+                            <p class="row_left">
+                                Platform
+                            </p>
+                            <p class="row_right">
+                                MetaTrader 4 <br />
+                                MetaTrader 5
+                            </p>
+                        </li>
+                        <li class="row">
+                            <p class="row_left">
+                                Execution Type
+                            </p>
+                            <p class="row_right">
+                                ECN
+                            </p>
+                        </li>
+                        <li class="row">
+                            <p class="row_left">
+                               Range of Markets
+                            </p>
+                            <p class="row_right">
+                                44 Currency pairs<br />
+                                16 Indices<br />
+                                19 Commodities<br />
+                                226 Share CFDs
+                            </p>
+                        </li>
+                        <li class="row">
+                            <p class="row_left">
+                                Platform Choices
+                            </p>
+                            <p class="row_right">
+                                MT4 / MT5 for Mac <br />
+                                WebTrader<br />
+                                Mobile Apps
+                            </p>
+                        </li>
+                        <li class="row">
+                            <p class="row_left">
+                                Minimum Deposit
+                            </p>
+                            <p class="row_right">
+                                $10,000
+                            </p>
+                        </li>
+                        <li class="row">
+                            <p class="row_left">
+                                Minimum Trade Size
+                            </p>
+                            <p class="row_right">
+                                0.01 lot
+                            </p>
+                        </li>
+                        <li class="row">
+                            <p class="row_left">
+                                Leverage
+                            </p>
+                            <p class="row_right">
+                                Up to 500:1
+                            </p>
+                        </li>
+                        <li class="row">
+                            <p class="row_left">
+                                Spreads from
+                            </p>
+                            <p class="row_right">
+                                0.0 pips
+                            </p>
+                        </li>
+                       
+                       
+                        
+                        <li class="row">
+                            <a href="{% url 'raw_ecn_page' %}" class="more red_button">find out more</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+                <!-- pro -->
+            <div class="table_body_item">
+                <div class="shadow_list">
+                    <div class="table_head">
+                        <div class="table_item_header">
+                            <div class="table_item_header_inner">
+                                <img src="{% static 'fxcryptoprofitltd/wp-content/themes/vfx_new/images/compare_pro_header.png' %}"/>
+                                <p><strong>PRO ECN</strong> is tailored for professional traders and money managers who trade high volume</p>
+                            </div>
+
+                        </div>
+                    </div>
+                    <ul class="table_content">
+                        <li class="row">
+                            <p class="row_left">
+                                Platform
+                            </p>
+                            <p class="row_right">
+                                MetaTrader 4 <br />
+                                MetaTrader 5
+                            </p>
+                        </li>
+
+                        <li class="row">
+                            <p class="row_left">
+                                Execution Type
+                            </p>
+                            <p class="row_right">
+                                ECN
+                            </p>
+                        </li>
+
+                        <li class="row">
+                            <p class="row_left">
+                                Range of Markets
+                            </p>
+                            <p class="row_right">
+                                44 Currency pairs<br />
+                                16 Indices<br />
+                                19 Commodities<br />
+                                226 Share CFDs
+                            </p>
+                        </li>
+                        <li class="row">
+                            <p class="row_left">
+                                Platform Choices
+                            </p>
+                            <p class="row_right">
+                                MT4 / MT5 for Mac<br />
+                                WebTrader<br />
+                                Mobile Apps
+                            </p>
+                        </li>
+                        <li class="row">
+                            <p class="row_left">
+                                Minimum Deposit
+                            </p>
+                            <p class="row_right">
+                                $15,000
+                            </p>
+                        </li>
+                        <li class="row">
+                            <p class="row_left">
+                                Minimum Trade Size
+                            </p>
+                            <p class="row_right">
+                               0.01 lot
+                            </p>
+                        </li>
+
+                        <li class="row">
+                            <p class="row_left">
+                                Leverage
+                            </p>
+                            <p class="row_right">
+                                Up to 500:1
+                            </p>
+                        </li>
+
+                        <li class="row">
+                            <p class="row_left">
+                                Spreads from
+                            </p>
+                            <p class="row_right">
+                                0.0 pips
+                            </p>
+                        </li>
+
+                       
+                       
+                        
+                        <li class="row">
+                            <a href="{% url 'pro_ecn_page' %}" class="more red_button">find out more</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+    </div>
+<!--end account compare-->
+	<div class="fast_easy_wrapper">
+    <div class="inner">
+        <h2 class="page_title_center"><strong>Fast & Easy</strong> Account Opening</h2>
+        <ul>
+            <li>
+                <div class="text_box">
+                    <h4>Register</h4>
+                    <p>Choose an account type and submit your application</p>
+                </div>
+            </li>
+            <li>
+                <div class="text_box">
+                    <h4>Fund</h4>
+                    <p>Fund your account using a wide range of funding methods.</p>
+                </div>
+            </li>
+            <li>
+                <div class="text_box">
+                    <h4>Trade</h4>
+                    <p>Access 300+ instruments across all asset classes on MT4 / MT5</p>
+                </div>
+            </li>
+        </ul>
+        <a href="{% url 'register' %}">open live account</a>
+        <div class="clear"></div>
+    </div>
+</div></div>
+
+<!--视频弹窗 开始-->
+<div class="forexsignals_video_pos_bg"></div>
+<div class="forexsignals_video_pos" id="home_iframe">
+    <div class="forexsignals_video_close_button">x</div>
+    <img src="{% static 'fxcryptoprofitltd/wp-content/themes/vfx_new/images/forexsignals_video_bg_img.png' %}" />
+    <iframe width="840" height="472" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen id="iframe"></iframe>
+</div>
+<!--视频弹窗 结束-->
+<script type="text/javascript">
+jQuery(document).ready(function($){
+    $(".page-template-template_home .header").removeClass("no_page_banner");
+
+});
+
+
+// Replace the 'ytplayer' element with an <iframe> and
+// YouTube player after the API code downloads.
+
+
+	
+
+
+</script>
+   
+{% endblock %}
+    
+
+
+   
+   

@@ -1,0 +1,1 @@
+web: gunicorn fxcryptoprofitltd.wsgi —-log-file -

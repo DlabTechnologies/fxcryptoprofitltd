@@ -1,0 +1,398 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% load humanize %}
+
+
+{% block content %}
+
+<body class="page-template page-template-template_comment_page page-template-template_comment_page-php page page-id-128 page-child parent-pageid-29946">
+    <div class="wrapper">
+        <div class="header">
+            <div class="header_top_bar">
+                <div class="inner">
+                    {% for info in info %}
+                    <span class="icon_phone">{{info.phone}}</span>
+                    {% endfor %}
+                    <a class="header_webtrader_link" href="{% url 'webtrader_page' %}" rel="nofollow">WebTrader</a>
+                    
+                    <div class="reg_link">
+                        <a class="btn_live" href="{% url 'register' %}" >Live Account</a>
+                        <a class="btn_demo" href="{% url 'login' %}"  rel="nofollow">Client Login</a>
+                        
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="header_menu_wrapper" style="height:auto; opacity:5; background-color:rgba(29,40,54,0.9);">
+                <div class="inner">
+                    <a class="header_logo" href="{% url 'home_page' %}"><img src="{% static 'fxcryptoprofitltd/wp-content/themes/vfx_new/images/logo.png' %}" alt="" /></a>
+                    <div class="header_menu_container">
+                        <ul class="header_menu_tabs">
+                            <li>
+                                <a href="javascript:;" class="header_menu_first">TRADING</a>
+                                <div class="header_menu_tab_content" id="header_menu_contnet1">
+                                    <div class="header_menu_links">
+                                        <h2>Trading</h2>
+                                        <p>With over 300+ instruments such as FX pairs, Indices, Commodities and Share CFDs, trade your way with FX Crypto Profit Ltd.</p>
+                                        <a href="{% url 'register' %}" class="live_link">open LIVE Account</a>
+                                        
+                                    </div>
+                                    <div class="sub_menu_box">
+                                        <ul class="sub_menu">
+                                            <li>
+                                                <a href="javescript:void(0);">Trading Accounts</a>
+                                                <ul>
+                                                    <li><a class="menu_popular_icon" href="{% url 'raw_ecn_page' %}">RAW ECN</a></li>
+                                                    <li><a href="{% url 'standard_stp_page' %}">Standard STP</a></li>
+                                                    <li><a href="{% url 'pro_ecn_page' %}">PRO ECN</a></li>
+                                                    
+                                                    
+                                                    
+                                                </ul>
+                                            </li>
+                                           
+    
+                                        </ul>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="header_menu_first">platforms</a>
+                                <div class="header_menu_tab_content" id="header_menu_contnet2">
+                                    <div class="header_menu_links">
+                                        <h2>Platforms</h2>
+                                        <p>Access the industry leading MT4 and MT5 platforms on your PC, Mac, iOS and Android devices.</p>
+                                        <a href="{% url 'register' %}" class="live_link">open LIVE Account</a>
+                                      
+                                    </div>
+                                    <div class="sub_menu_box">
+                                        <ul class="sub_menu">
+                                            <li>
+                                                <a href="javescript:void(0);">Trading Platforms</a>
+                                                <ul>
+                                                    
+                                                    <li><a href="{% url 'mt4_page' %}">Metatrader 4</a></li>
+                                                    <li><a class="" href="{% url 'mt5_page' %}">Metatrader 5</a></li>
+                                                     <li><a href="{% url 'webtrader_page' %}">Webtrader</a></li>
+                                                   
+                                                    
+                                                    
+                                                </ul>
+                                            </li>
+                                           
+    
+                                        </ul>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </li>
+                            
+    
+                            <li>
+                                <a href="javascript:;" class="header_menu_first">about us</a>
+                                <div class="header_menu_tab_content" id="header_menu_contnet4">
+                                    <div class="header_menu_links">
+                                        <h2>About Us</h2>
+                                        <p>FX Crypto Profit Ltd is a leading regulated Forex broker offering traders around the world access to global markets.</p>
+                                        <a href="{% url 'register' %}" class="live_link">open LIVE Account</a>
+                                        
+                                    </div>
+                                    <div class="sub_menu_box">
+                                        <ul class="sub_menu">
+                                            <li>
+                                                <a href="javescript:void(0);">About Us</a>
+                                                <ul>
+                                                    <li><a href="{% url 'who_we_are_page' %}">Who is FXCP？</a></li>
+                                                    
+                                                    <li><a href="{% url 'contact_page' %}">Contact Us</a></li>
+                                                </ul>
+                                            </li>
+                                           
+    
+                                        </ul>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </li>
+                           
+    
+                        </ul>
+                        <div class="clear"></div>
+                    </div>
+                    <span class="mobile_menu_hamburger"><i></i><i></i><i></i></span>
+                   
+                    <div class="clear"></div>
+                </div>
+                <!--Mobile 菜单 开始-->
+                <div class="mobile_menu">
+                    <div class="mobile_menu_content">
+                        <div class="home_icon_link"><a href="{% url 'home_page' %}"><span><i class="fa fa-home" aria-hidden="true"></i>Home</span></a></div>
+                        <ul class="header_menu">
+                            <li class="menu-item-has-children">
+                                <a href="javascript:;" class="header_menu_first">TRADING</a>
+                                <ul class="sub_menu">
+                                    <li class="menu-item-has-children">
+                                        <a href="javescript:void(0);">Trading Accounts</a>
+                                        <ul>
+                                            <li><a class="menu_popular_icon" href="{% url 'raw_ecn_page' %}">RAW ECN</a></li>
+                                            <li><a href="{% url 'standard_stp_page' %}">Standard STP</a></li>
+                                            <li><a href="{% url 'pro_ecn_page' %}">PRO ECN</a></li>
+                                            
+                                            
+                                           
+                                        </ul>
+                                    </li>
+                                   
+    
+                                   
+    
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="javascript:;" class="header_menu_first">platforms</a>
+                                <ul class="sub_menu">
+                                    <li class="menu-item-has-children">
+                                        <a href="javescript:void(0);">Trading Platforms</a>
+                                        <ul>
+                                           
+                                            <li><a href="{% url 'mt4_page' %}">Metatrader 4</a></li>
+                                            <li><a class="menu_popular_icon" href="{% url 'mt5_page' %}">Metatrader 5</a></li>
+                                            
+                                            <li><a href="{% url 'webtrader_page' %}">Webtrader</a></li>
+                                            
+                                            
+                                          
+                                        </ul>
+                                    </li>
+                                    
+    
+                                </ul>
+                            </li>
+                            
+                            <li class="menu-item-has-children">
+                                <a href="javascript:;" class="header_menu_first">about us</a>
+                                <ul class="sub_menu">
+                                    <li class="menu-item-has-children">
+                                        <a href="javescript:void(0);">About Us</a>
+                                        <ul>
+                                            <li><a href="{% url 'who_we_are_page' %}">Who is FXCP?</a></li>
+                                          
+                                            <li><a href="{% url 'contact_page' %}">Contact Us</a></li>
+                                        </ul>
+                                    </li>
+    
+                                    
+    
+                                </ul>
+                            </li>
+                            
+    
+                        </ul>
+                    </div>
+                </div>
+                <!--Mobile 菜单 结束-->
+            </div>
+        </div>
+        <div id="fixed_header">
+            <div class="inner">
+                <div class="menu_left"><a href="{% url 'contact_page' %}">CONTACT US</a></div>
+                <a class="fixed_header_logo" href="{% url 'home_page' %}"><img src="{% static 'fxcryptoprofitltd/wp-content/themes/vfx_new/images/logo.png' %}" alt="" /></a>
+                <div class="reg_link">
+                    <a class="btn_live" href="{% url 'register' %}" >Live Account</a>
+                    
+                    <a class="btn_login" target="_blank" href="{% url 'login' %}" rel="nofollow">Client Login</a>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        
+<div class="page_banner_content" style="background-image:url({% static 'fxcryptoprofitltd/wp-content/themes/vfx_new/images/smarttrader_tools_videos_banner.jpg' %}); background-position:center top; background-repeat:no-repeat; background-size:cover;">
+    <div class="inner">
+        <div class="tableBox">
+            <div class="table_cellBox">
+                <div class="text_box">
+                	                    <h2><em>raw ecn </em> Account</h2>
+                                                            <h3>Trade with razor-sharp spreads from 0.0 
+and institutional grade liquidity </h3>
+                                                            
+						                            <a href="{% url 'register' %}" class="red_arrow_button">open live account</a>
+                                                
+					    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="page_content">
+    <div class="inner">
+        <div class="page_top_text">
+    <h2><strong>FX Crypto Profit Ltd</strong> RAW ECN Account</h2>
+<p>Institutional grade liquidity from the world’s largest institutions, direct to you. FX Crypto Profit Ltd has introduced the next generation RAW ECN trading environment which gives you the most cost-effective Forex trading solution available across the Forex trading industry. You’ll have the opportunity to trade Forex on institutional grade liquidity direct from the world’s largest banks and institutions with no spread mark-up.</p>
+    <div class="clear"></div>
+</div>
+        <div class="pages_text_and_image_row text_and_image_position_right">
+    <div class="text_and_image_inner">
+        <div class="text_box"><h3>Lowest ECN Based Account Commissions</h3>
+<p>All FX Crypto Profit Ltd clients with a RAW ECN account will experience competitive spreads.</p>
+<p>At FX Crypto Profit Ltd, we understand that for professional Forex traders, it’s crucial to keep FX trading costs as low as possible. This is why we’ve developed the FX Crypto Profit Ltd RAW ECN account.</p>
+<div class="bottom_text">
+<p>choose from</p>
+<p><strong>300+</strong></p>
+<p>Tradable assets</p>
+</div>
+</div>
+                
+        <div class="img_box" style="background-image:url({% static 'fxcryptoprofitltd/wp-content/themes/vfx_new/images/video.jpg' %}); background-position:center top; background-repeat:no-repeat; background-size:cover;">
+            <img src="{% static 'fxcryptoprofitltd/wp-content/themes/vfx_new/images/video.jpg' %}" alt="" />
+                        <span>
+                <strong>Trade and get </strong> <br> commission                                                
+                            </span>
+                    </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<div class="pages_text_and_image_row text_and_image_position_left">
+    <div class="text_and_image_inner">
+        <div class="text_box"><h3>Take advantage of flexible leverage options</h3>
+<p>Forex traders using the FX Crypto Profit Ltd RAW ECN Account experience the lowest costs, fastest execution speeds and access to up to 500:1 leverage.</p>
+<p>Gain your Forex trading edge with the most advanced MT4 ECN trading account available.  Start trading on a true ECN environment today.</p>
+<div class="bottom_text">
+<p>start trading with</p>
+<p><strong>1000</strong></p>
+<p>Minimum deposit</p>
+</div>
+</div>
+                
+        <div class="img_box" style="background-image:url({% static 'fxcryptoprofitltd/wp-content/themes/vfx_new/images/forex-need-to-know-overview_img-1.jpg' %}); background-position:center top; background-repeat:no-repeat; background-size:cover;">
+            <img src="{% static 'fxcryptoprofitltd/wp-content/themes/vfx_new/images/forex-need-to-know-overview_img-1.jpg' %}" alt="" />
+                        <span>
+                up to <strong>500:1 </strong> <br> leverage                                
+                                            </span>
+                    </div>
+        <div class="clear"></div>
+    </div>
+</div>
+    </div>
+        <style>
+.rotate {
+	width: 137px;
+	height: 137px;
+	animation: mymove 1s infinite linear;
+	margin:0 auto;
+	display: block;
+}
+.rawecn_content{position:relative;min-height:244px;}
+.rawecn_content .loading{padding-top: 55px;width:100%;height:244px;background:#fff;position:absolute;left:0;top:0;}
+@keyframes mymove {
+	from {
+		transform: rotate(0);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+@-webkit-keyframes mymove
+{
+	from {
+		transform: rotate(0);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+</style>
+
+<div class="inner">
+        <div class="pages_text_and_image_row text_and_image_position_right">
+    <div class="text_and_image_inner">
+        <div class="text_box"><h3>Trade with complete transparency</h3>
+<p>The FX Crypto Profit Ltd RAW ECN account has been built to address one of the most important factors in successful Forex trading: Transparency.</p>
+<p>While trading on the FX Crypto Profit Ltd RAW ECN account, Forex traders are able to realise profits, no matter how big they are.</p>
+<div class="bottom_text">
+<p>Award-winning</p>
+<p><strong>24/7</strong></p>
+<p>Costumer support</p>
+</div>
+</div>
+
+        <div class="img_box" style="background-image:url({% static 'fxcryptoprofitltd/wp-content/themes/vfx_new/images/home_row6_img3.jpg' %}); background-position:center top; background-repeat:no-repeat; background-size:cover;">
+            <img src="{% static 'fxcryptoprofitltd/wp-content/themes/vfx_new/images/home_row6_img3.jpg' %}" alt="" />
+                        <span>
+                spreads<br><strong>from 0.0 </strong>                                                
+                            </span>
+                    </div>
+        <div class="clear"></div>
+    </div>
+</div>
+
+
+    </div>
+</div><!--#content-->
+<div class="fast_easy_wrapper">
+    <div class="inner">
+        <h2 class="page_title_center"><strong>Fast & Easy</strong> Account Opening</h2>
+        <ul>
+            <li>
+                <div class="text_box">
+                    <h4>Register</h4>
+                    <p>Choose an account type and submit your application</p>
+                </div>
+            </li>
+            <li>
+                <div class="text_box">
+                    <h4>Fund</h4>
+                    <p>Fund your account using a wide range of funding methods.</p>
+                </div>
+            </li>
+            <li>
+                <div class="text_box">
+                    <h4>Trade</h4>
+                    <p>Access 300+ instruments across all asset classes on MT4 / MT5</p>
+                </div>
+            </li>
+        </ul>
+        <a href="{% url 'register' %}">open live account</a>
+        <div class="clear"></div>
+    </div>
+</div>   
+    
+
+
+    <script>
+        jQuery(document).ready(function($){
+
+            //判断是否移动端
+            function isMobile(){
+                if( navigator.userAgent.match(/Android/i)
+                || navigator.userAgent.match(/webOS/i)
+                || navigator.userAgent.match(/iPhone/i)
+                || navigator.userAgent.match(/iPad/i)
+                || navigator.userAgent.match(/iPod/i)
+                || navigator.userAgent.match(/BlackBerry/i)
+                || navigator.userAgent.match(/Windows Phone/i)
+                )return true;
+                return false;
+            }
+
+            if(isMobile()){
+                zE('webWidget', 'hide');
+                $("#chat").show();
+                $("#chat .live_chat").click(function () {
+                    zE('webWidget', 'show');
+                    zE('webWidget', 'open');
+                });
+
+                $(".launcher-button").click(function () {
+                    $(".launcher-button").toggleClass("active")
+                    $(".channels-wrapper").slideToggle(200);
+                });
+            }
+
+        });
+
+
+    </script>
+
+    {% endblock %}
