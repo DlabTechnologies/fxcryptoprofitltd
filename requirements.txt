@@ -1,4 +1,4 @@
-asgiref==3.2.7
+gitasgiref==3.2.7
 Babel==2.8.0
 boto3==1.14.43
 botocore==1.17.43
@@ -20,7 +20,7 @@ Pillow==7.1.1
 psycopg2==2.8.5
 python-dateutil==2.8.1
 python-dotenv==0.14.0
-python-magic-bin==0.4.14
+
 pytz==2019.3
 s3transfer==0.3.3
 six==1.14.0
