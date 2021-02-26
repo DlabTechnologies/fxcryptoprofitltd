@@ -7,6 +7,10 @@
 {% block content %}
 <body class="home page-template page-template-template_home page-template-template_home-php page page-id-5">
 
+    
+       
+       <!-- ========== END COPYING HERE ========== -->
+
 
     <div class="wrapper">
         <div class="header no_page_banner">
@@ -892,6 +896,50 @@
                     </div>
 
                 </div>
+
+
+
+                <!--Recent Payouts-->
+                <br/><br/><br/><br/>
+
+                <h2>Recent<strong>  Payouts</strong></h2>
+                <div class="home_row5_video" style="width: 100%;">
+                    
+            
+                    <div class="table-responsive" style="width: 100%;">
+                        <table class="bitland-table table table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Country</th>
+                                    <th scope="col">Amount Invested</th>
+                                    <th scope="col">Payout Amount</th>
+                                    <th scope="col">Payout Time</th>
+                                    <th scope="col">Account Type</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
+                                {% for payout in recent_payout %}
+                                <tr>
+                                    <td>{{payout.name}}</td>
+                                    <td>{{payout.country}}</td>
+                                    <td>$ {{payout.amount_invested}}</td>
+                                    <td>$ {{payout.payout_amount}}</td>
+                                    <td>{{payout.payout_date|naturaltime}}</td>
+                                    <td>{{payout.account_type}}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                   
+
+                    
+
+                </div>
+                <!--End recent payouts-->
             </div>
            
             <div class="clear"></div>

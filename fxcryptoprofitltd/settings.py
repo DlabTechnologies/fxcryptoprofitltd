@@ -34,7 +34,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['fxcryptoprofitltd.herokuapp.com','fxcryptoprofitltd.com','www.fxcryptoprofitltd.com']
+ALLOWED_HOSTS = ['127.0.0.1','fxcryptoprofitltd.com','www.fxcryptoprofitltd.com']
 
 
 
@@ -122,8 +122,8 @@ DATABASES = {
 
 
 # for dj_database_url
-db_from_env = dj_database_url.config()
-DATABASES['default'].update(db_from_env)
+#db_from_env = dj_database_url.config()
+#DATABASES['default'].update(db_from_env)
 
 
 # Password validation
@@ -161,8 +161,6 @@ USE_TZ = True
 
 
 #ssl redirect
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-SECURE_SSL_REDIRECT = True
 
 
 
